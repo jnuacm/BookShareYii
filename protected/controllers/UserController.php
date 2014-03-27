@@ -2,6 +2,19 @@
 
 class UserController extends Controller
 {
+        /**
+	 * Declares class-based actions.
+	 */
+	public function actions()
+	{
+		return array(
+			// captcha action renders the CAPTCHA image displayed on the contact page
+			'captcha'=>array(
+				'class'=>'CCaptchaAction',
+				'backColor'=>0xFFFFFF,
+			),
+		);
+	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -28,11 +41,11 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','mbsignin','mbsignup'),
+				'actions'=>array('index','view','create','mbsignin','mbsignup','captcha'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -51,7 +64,6 @@ class UserController extends Controller
 	 */
 	public function actionView($id)
 	{
-            echo 'id = 1';
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -190,7 +202,6 @@ class UserController extends Controller
         public function actionMbSignin(){
             $model=new LoginForm;
             // collect user input data
-            echo 'see';
             if(isset($_POST['LoginForm']))
             {
                     $model->attributes=$_POST['LoginForm'];

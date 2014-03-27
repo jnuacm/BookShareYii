@@ -372,3 +372,685 @@ Stack trace:
 #12 {main}
 REQUEST_URI=/BookShareYii/index.php?r=user/view
 ---
+2014/03/27 08:25:14 [error] [php] Object of class CHttpRequest could not be converted to string (D:\xampp\htdocs\BookShareYii\protected\controllers\UserController.php:193)
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): UserController->runActionWithFilters()
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): UserController->run()
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/BookShareYii/?r=user/mbsignin
+in D:\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (193)
+in D:\xampp\htdocs\BookShareYii\index.php (13)
+2014/03/27 09:18:46 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:336
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('view')
+#9 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/view')
+#10 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/view
+---
+2014/03/27 10:46:47 [error] [exception.CException] exception 'CException' with message 'Property "User.verifyCode" is not defined.' in D:\yii-1.1.14.f0fee9\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(145): CComponent->__get('verifyCode')
+#1 D:\yii-1.1.14.f0fee9\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('verifyCode')
+#2 D:\yii-1.1.14.f0fee9\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(User), 'verifyCode')
+#3 D:\yii-1.1.14.f0fee9\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(User), 'verifyCode', Array)
+#4 D:\yii-1.1.14.f0fee9\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(User), 'verifyCode', Array)
+#5 D:\xampp\htdocs\BookShareYii\protected\views\user\_form.php(51): CActiveForm->textField(Object(User), 'verifyCode')
+#6 D:\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('D:\xampp\htdocs...')
+#7 D:\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\xampp\htdocs...', Array, true)
+#8 D:\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('D:\xampp\htdocs...', Array, true)
+#9 D:\xampp\htdocs\BookShareYii\protected\views\user\create.php(18): CController->renderPartial('_form', Array)
+#10 D:\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('D:\xampp\htdocs...')
+#11 D:\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\xampp\htdocs...', Array, true)
+#12 D:\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('D:\xampp\htdocs...', Array, true)
+#13 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 D:\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(79): CController->render('create', Array)
+#15 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): UserController->actionCreate()
+#16 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#23 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#25 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/create')
+#26 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/create
+---
+2014/03/27 10:48:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#3 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5333f4050924e
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 10:48:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#3 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&refresh=1&_=1395913735338
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 10:48:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#3 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&refresh=1&_=1395913736809
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 10:49:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#3 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5333f41a5ea5c
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 10:49:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#3 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5333f41bceba7
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 10:49:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#3 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&refresh=1&_=1395913756816
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:46:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#3 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=53340180534f0
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:51:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#3 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5334029636f66
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:51:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#3 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&refresh=1&_=1395917465284
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:51:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#3 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&refresh=1&_=1395917469046
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:51:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#3 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=533402a05dec3
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:53:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5334031ab0af8
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:53:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5334031b97104
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:53:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5334031ce95b8
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:54:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5334035415f82
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:54:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5334035544dc6
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:54:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&refresh=1&_=1395917654960
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:54:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&refresh=1&_=1395917655571
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:54:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=533403594f6a5
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:54:58 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=53340381ec3ba
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:55:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=533403838b54d
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:58:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5334043d02c2c
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:58:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5334043db01c5
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:58:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5334043e4b886
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:58:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=5334043ee78c3
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 11:58:34 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "create".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#1 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): CController->render('create', Array)
+#2 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('signup')
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#8 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+---
+2014/03/27 11:58:47 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "user/create".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('user/create', Array, true)
+#1 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): CController->render('user/create', Array)
+#2 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('signup')
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#8 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+---
+2014/03/27 11:58:48 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "user/create".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('user/create', Array, true)
+#1 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): CController->render('user/create', Array)
+#2 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('signup')
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#8 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+---
+2014/03/27 11:59:11 [error] [php] strpos() expects parameter 1 to be string, array given (D:\yii-1.1.14.f0fee9\framework\web\CController.php:706)
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(867): SiteController->getViewFile()
+#1 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): SiteController->render()
+#3 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+in D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php (116)
+in D:\xampp\htdocs\BookShareYii\index.php (13)
+2014/03/27 11:59:50 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "user/view/create".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('user/view/creat...', Array, true)
+#1 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): CController->render('user/view/creat...', Array)
+#2 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('signup')
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#8 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+---
+2014/03/27 11:59:53 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "user/view/create".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('user/view/creat...', Array, true)
+#1 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): CController->render('user/view/creat...', Array)
+#2 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('signup')
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#8 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+---
+2014/03/27 12:00:10 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "views/user/create".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('views/user/crea...', Array, true)
+#1 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): CController->render('views/user/crea...', Array)
+#2 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('signup')
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#8 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+---
+2014/03/27 12:00:11 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "views/user/create".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('views/user/crea...', Array, true)
+#1 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): CController->render('views/user/crea...', Array)
+#2 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('signup')
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#8 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+---
+2014/03/27 12:00:12 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "views/user/create".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('views/user/crea...', Array, true)
+#1 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): CController->render('views/user/crea...', Array)
+#2 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('signup')
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#8 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+---
+2014/03/27 12:00:12 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "views/user/create".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('views/user/crea...', Array, true)
+#1 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): CController->render('views/user/crea...', Array)
+#2 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('signup')
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#8 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+---
+2014/03/27 12:00:29 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "_form".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 D:\xampp\htdocs\BookShareYii\protected\views\user\create.php(18): CController->renderPartial('_form', Array)
+#1 D:\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('D:\xampp\htdocs...')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\xampp\htdocs...', Array, true)
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('D:\xampp\htdocs...', Array, true)
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('../user/create', Array, true)
+#5 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): CController->render('../user/create', Array)
+#6 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#7 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('signup')
+#11 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#12 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+---
+2014/03/27 12:00:31 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "_form".' in D:\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 D:\xampp\htdocs\BookShareYii\protected\views\user\create.php(18): CController->renderPartial('_form', Array)
+#1 D:\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('D:\xampp\htdocs...')
+#2 D:\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\xampp\htdocs...', Array, true)
+#3 D:\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('D:\xampp\htdocs...', Array, true)
+#4 D:\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('../user/create', Array, true)
+#5 D:\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(116): CController->render('../user/create', Array)
+#6 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionSignup()
+#7 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('signup')
+#11 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#12 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/BookShareYii/index.php?r=site/signup
+---
+2014/03/27 12:01:58 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=533405263a820
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 12:01:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=533405272e506
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 12:05:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=533405fd5dbd1
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---
+2014/03/27 12:05:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('captcha')
+#8 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captcha')
+#9 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=533405fe20b6c
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---

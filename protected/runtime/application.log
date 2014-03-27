@@ -1054,3 +1054,27 @@ Stack trace:
 REQUEST_URI=/BookShareYii/index.php?r=user/captcha&v=533405fe20b6c
 HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
 ---
+2014/03/27 12:52:59 [error] [exception.CException] exception 'CException' with message 'CCaptchaValidator.action "captcha" is invalid. Unable to find such an action in the current controller.' in D:\yii-1.1.14.f0fee9\framework\validators\CCaptchaValidator.php:77
+Stack trace:
+#0 D:\yii-1.1.14.f0fee9\framework\validators\CCaptchaValidator.php(49): CCaptchaValidator->getCaptchaAction()
+#1 D:\yii-1.1.14.f0fee9\framework\validators\CValidator.php(213): CCaptchaValidator->validateAttribute(Object(User), 'verifyCode')
+#2 D:\yii-1.1.14.f0fee9\framework\base\CModel.php(159): CValidator->validate(Object(User), NULL)
+#3 D:\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(805): CModel->validate(NULL)
+#4 D:\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(73): CActiveRecord->save()
+#5 D:\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): UserController->actionCreate()
+#6 D:\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 D:\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#13 D:\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#15 D:\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('user/create')
+#16 D:\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/BookShareYii/index.php?r=user/create
+HTTP_REFERER=http://localhost:8080/BookShareYii/index.php?r=user/create
+---

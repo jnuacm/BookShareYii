@@ -2,19 +2,6 @@
 
 class UserController extends Controller
 {
-        /**
-	 * Declares class-based actions.
-	 */
-	public function actions()
-	{
-		return array(
-			// captcha action renders the CAPTCHA image displayed on the contact page
-			'captcha'=>array(
-				'class'=>'CCaptchaAction',
-				'backColor'=>0xFFFFFF,
-			),
-		);
-	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -41,7 +28,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create','mbsignin','mbsignup','captcha'),
+				'actions'=>array('index','view','create','mbsignin','mbsignup'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -194,6 +181,10 @@ class UserController extends Controller
             if(isset($_POST['User']))
             {
                     $model->attributes=$_POST['User'];
+                    if(null !== User::model()->findByAttributes($model->username))
+                        echo 'username';
+                    if(null !== User::model()->findByAttributes($model->email))
+                        echo 'email';
                     if($model->save())
                         echo 'yes';
             }

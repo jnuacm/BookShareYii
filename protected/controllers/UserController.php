@@ -181,11 +181,11 @@ class UserController extends Controller
             if(isset($_POST['User']))
             {
                     $model->attributes=$_POST['User'];
-                    if(null !== User::model()->findByAttributes($model->username))
+                    if(null !== User::model()->findByAttributes(array('username' => $model->username)))
                         echo 'username';
-                    if(null !== User::model()->findByAttributes($model->email))
+                    elseif(null !== User::model()->findByAttributes(array('email' => $model->email)))
                         echo 'email';
-                    if($model->save())
+                    elseif($model->save())
                         echo 'yes';
             }
         }

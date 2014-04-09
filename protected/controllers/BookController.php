@@ -32,7 +32,7 @@ class BookController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','mbbooklist'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -192,6 +192,20 @@ class BookController extends Controller
                 }
         }
         
+        public function actionMbBookList(){
+            $sql='SELECT tbl_book.id, tbl_book.name, tbl_book.isbn, tbl_book.author, tbl_book.description, tbl_book.publisher, tbl_book_user_own.status 
+                FROM tbl_book, tbl_book_user_own WHERE tbl_book_user_own.book_id = tbl_book.id
+                AND tbl_book_user_own.owner_id ='.Yii::app()->user->id;
+            $cmd=Yii::app()->db->createCommand($sql);
+            $ownedResults=$cmd->queryAll();
+            $sql='SELECT tbl_book.id, tbl_book.name, tbl_book.isbn, tbl_book.author, tbl_book.description, tbl_book.publisher, tbl_book_user_borrow.borrow_time 
+                FROM tbl_book, tbl_book_user_borrow WHERE tbl_book_user_borrow.book_id = tbl_book.id
+                AND tbl_book_user_borrow.borrower_id ='.Yii::app()->user->id;
+            $cmd=Yii::app()->db->createCommand($sql);
+            $borrowedResults=$cmd->queryAll();
+            echo CJSON::encode(array("ownedBooks"=>$ownedResults, "borrowedBooks"=>$borrowedResults));
+        }
+        
         public function actionMbBorrow(){
             $ownerId = Yii::app()->request->getParam('ownerId');
             $bookId = Yii::app()->request->getParam('bookId');
@@ -203,6 +217,6 @@ class BookController extends Controller
             $cmd = Yii::app()->db->createCommand($sql);
             $cmd->bindValue(":bookId", $bookId, PDO::PARAM_INT); 
             $cmd->bindValue(":ownerId",Yii::app()->user->id, PDO::PARAM_INT); 
-            return $command->execute();
+            return $cmd->execute();
         }
 }

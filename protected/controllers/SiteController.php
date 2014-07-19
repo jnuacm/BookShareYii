@@ -75,7 +75,7 @@ class SiteController extends Controller
 	/**
 	 * Displays the login page
 	 */
-	public function actionLogin()
+	public function actionPhoneLogin()
 	{
 		$model=new LoginForm;
 
@@ -98,26 +98,6 @@ class SiteController extends Controller
 		$this->render('login',array('model'=>$model));
 	}
 
-        public function actionSignup(){
-                $model = new User;
-                // if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-                // collect user input data
-		if(isset($_POST['User']))
-		{
-			$model->attributes=$_POST['User'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->home);
-		}
-		// display the login form
-		$this->redirect(array('user/create'));
-        }
-        
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */

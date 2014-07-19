@@ -4,16 +4,14 @@
  * This is the model class for table "tbl_user".
  *
  * The followings are the available columns in table 'tbl_user':
- * @property integer $id
  * @property string $username
  * @property string $email
  * @property string $password
  * @property string $area
  *
  * The followings are the available model relations:
- * @property BookUserBorrow[] $bookUserBorrows
- * @property BookUserBorrow[] $bookUserBorrows1
- * @property Book[] $tblBooks
+ * @property TblBook[] $tblBooks
+ * @property TblBookUserBorrow[] $tblBookUserBorrows
  */
 class User extends CActiveRecord
 {
@@ -34,11 +32,12 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('username, email, password', 'required'),
+			array('username', 'length', 'max'=>64),
+			array('email, password, area', 'length', 'max'=>256),
                         array('email, username', 'unique'),
-			array('username, email, password, area', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, email, password, area', 'safe', 'on'=>'search'),
+			array('username, email, password, area', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -50,9 +49,8 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'bookUserBorrows' => array(self::HAS_MANY, 'BookUserBorrow', 'borrower_id'),
-			'bookUserBorrows1' => array(self::HAS_MANY, 'BookUserBorrow', 'owner_id'),
-			'tblBooks' => array(self::MANY_MANY, 'Book', 'tbl_book_user_own(owner_id, book_id)'),
+			'tblBooks' => array(self::HAS_MANY, 'TblBook', 'owner'),
+			'tblBookUserBorrows' => array(self::HAS_MANY, 'TblBookUserBorrow', 'borrower'),
 		);
 	}
 
@@ -62,12 +60,10 @@ class User extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
 			'username' => 'Username',
 			'email' => 'Email',
 			'password' => 'Password',
 			'area' => 'Area',
-                        'verifyCode' => 'Verification Code',
 		);
 	}
 
@@ -89,7 +85,6 @@ class User extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('password',$this->password,true);

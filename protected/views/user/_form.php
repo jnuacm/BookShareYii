@@ -21,7 +21,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>64)); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
@@ -42,7 +42,7 @@
 		<?php echo $form->textField($model,'area',array('size'=>60,'maxlength'=>256)); ?>
 		<?php echo $form->error($model,'area'); ?>
 	</div>
-        
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

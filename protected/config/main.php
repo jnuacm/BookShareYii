@@ -19,7 +19,7 @@ return array(
 	),
 
 	'modules'=>array(
-		// uncomment the following to enable the Gii tool
+		// uncomment the following to enable the Gii tool		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'123456',
@@ -35,21 +35,27 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                                array('site/phonelogin', 'pattern'=>'api/login', 'verb'=>'GET'),
+                                array('site/phoneregister', 'pattern'=>'api/register', 'verb'=>'GET'),
+                            
+                                // REST patterns
+                                array('<model>/phoneList', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
+                                array('<model>/phoneView', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'GET'),
+                                array('<model>/phoneUpdate', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'PUT'),
+                                array('<model>/phoneDelete', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'DELETE'),
+                                array('<model>/phoneCreate', 'pattern'=>'api/<model:\w+>', 'verb'=>'POST'),
 			),
 		),
-		*/
-            /*
+		
+                /*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
-             * */
+                */
 		// uncomment the following to use a MySQL database
 		'db'=>array(
 			'connectionString' => 'mysql:host=www.jiaozuoye.com;dbname=book_share',
@@ -58,6 +64,7 @@ return array(
 			'password' => 'booktest',
 			'charset' => 'utf8',
 		),
+            
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',

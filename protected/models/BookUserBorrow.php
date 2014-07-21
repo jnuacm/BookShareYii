@@ -1,29 +1,26 @@
 <?php
 
 /**
- * This is the model class for table "tbl_book".
+ * This is the model class for table "tbl_book_user_borrow".
  *
- * The followings are the available columns in table 'tbl_book':
- * @property integer $id
- * @property string $name
- * @property string $isbn
- * @property string $author
- * @property string $description
- * @property string $publisher
- * @property string $owner
- * @property string $status
+ * The followings are the available columns in table 'tbl_book_user_borrow':
+ * @property integer $book_id
+ * @property string $borrower
+ * @property string $borrow_time
+ * @property string $due_time
  *
  * The followings are the available model relations:
- * @property User $owner0
+ * @property User $borrower0
+ * @property Book $book
  */
-class Book extends CActiveRecord
+class BookUserBorrow extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'tbl_book';
+		return 'tbl_book_user_borrow';
 	}
 
 	/**
@@ -34,14 +31,13 @@ class Book extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, isbn, owner, status', 'required'),
-			array('name, author, publisher', 'length', 'max'=>256),
-			array('isbn, status', 'length', 'max'=>32),
-			array('owner', 'length', 'max'=>64),
-			array('description', 'safe'),
+			array('book_id, borrower', 'required'),
+			array('book_id', 'numerical', 'integerOnly'=>true),
+			array('borrower', 'length', 'max'=>64),
+			array('borrow_time, due_time', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, isbn, author, description, publisher, owner, status', 'safe', 'on'=>'search'),
+			array('book_id, borrower, borrow_time, due_time', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,8 +49,8 @@ class Book extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'owner' => array(self::BELONGS_TO, 'User', 'owner'),
-                        'book' => array(self::HAS_ONE, 'BookUserBorrow', 'book_id'),
+			'borrower0' => array(self::BELONGS_TO, 'User', 'borrower'),
+			'book' => array(self::BELONGS_TO, 'Book', 'book_id'),
 		);
 	}
 
@@ -64,14 +60,10 @@ class Book extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'isbn' => 'Isbn',
-			'author' => 'Author',
-			'description' => 'Description',
-			'publisher' => 'Publisher',
-			'owner' => 'Owner',
-			'status' => 'Status',
+			'book_id' => 'Book',
+			'borrower' => 'Borrower',
+			'borrow_time' => 'Borrow Time',
+			'due_time' => 'Due Time',
 		);
 	}
 
@@ -93,36 +85,25 @@ class Book extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('isbn',$this->isbn,true);
-		$criteria->compare('author',$this->author,true);
-		$criteria->compare('description',$this->description,true);
-		$criteria->compare('publisher',$this->publisher,true);
-		$criteria->compare('owner',$this->owner,true);
-		$criteria->compare('status',$this->status,true);
+		$criteria->compare('book_id',$this->book_id);
+		$criteria->compare('borrower',$this->borrower,true);
+		$criteria->compare('borrow_time',$this->borrow_time,true);
+		$criteria->compare('due_time',$this->due_time,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-
-        public static function getUserOwnBooks($user){
-             return Book::model()->findAllByAttributes(array('owner'=>$user));
-        }
         
         public static function getUserBorrowedBooks($user){
              return BookUserBorrow::model()->findAllByAttributes(array('borrower'=>$user));
         }
-        
-        public static function getUserAllBooks($user){
-            return array('own_book'=>self::getUserOwnBooks($user), 'borrowed_book'=>self::getUserBorrowedBooksBooks($user));
-        }
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Book the static model class
+	 * @return BookUserBorrow the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -1836,3 +1836,165 @@ Stack trace:
 REQUEST_URI=/bookshareyii/index.php/api/login
 HTTP_REFERER=http://127.0.0.1/bookshareyii/res.html
 ---
+2014/07/21 10:41:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "gg".' in E:\web\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CController.php(270): CController->missingAction('gg')
+#1 E:\web\BookShareYii\framework\web\CWebApplication.php(282): CController->run('gg')
+#2 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/gg/book')
+#3 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\web\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BookShareYii/index.php/user/gg/book
+---
+2014/07/21 10:49:22 [error] [php] Use of undefined constant borrows_books - assumed 'borrows_books' (E:\web\BookShareYii\protected\controllers\BookController.php:116)
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#1 E:\web\BookShareYii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 E:\web\BookShareYii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 E:\web\BookShareYii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#4 E:\web\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 E:\web\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
+#6 E:\web\BookShareYii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#7 E:\web\BookShareYii\framework\web\CWebApplication.php(282): BookController->run()
+#8 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 E:\web\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/BookShareYii/index.php/api/user/gg/book
+in E:\web\BookShareYii\protected\controllers\BookController.php (116)
+in E:\web\BookShareYii\index.php (13)
+2014/07/21 10:49:45 [error] [php] Undefined variable: borrows_books (E:\web\BookShareYii\protected\controllers\BookController.php:116)
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#1 E:\web\BookShareYii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 E:\web\BookShareYii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 E:\web\BookShareYii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#4 E:\web\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 E:\web\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
+#6 E:\web\BookShareYii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#7 E:\web\BookShareYii\framework\web\CWebApplication.php(282): BookController->run()
+#8 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 E:\web\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/BookShareYii/index.php/api/user/gg/book
+in E:\web\BookShareYii\protected\controllers\BookController.php (116)
+in E:\web\BookShareYii\index.php (13)
+2014/07/21 10:49:48 [error] [php] Undefined variable: borrows_books (E:\web\BookShareYii\protected\controllers\BookController.php:116)
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#1 E:\web\BookShareYii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 E:\web\BookShareYii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 E:\web\BookShareYii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#4 E:\web\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 E:\web\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
+#6 E:\web\BookShareYii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#7 E:\web\BookShareYii\framework\web\CWebApplication.php(282): BookController->run()
+#8 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 E:\web\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/BookShareYii/index.php/api/user/gg/book
+in E:\web\BookShareYii\protected\controllers\BookController.php (116)
+in E:\web\BookShareYii\index.php (13)
+2014/07/21 13:56:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/book/delete/3".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/book/delete...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/book/delete/3
+---
+2014/07/21 13:58:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/delete/google".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/delete...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/user/delete/google
+---
+2014/07/21 13:59:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/google/delete".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/google...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/user/google/delete
+---
+2014/07/21 13:59:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "google/view".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('google/view')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/google/delete
+---
+2014/07/21 14:00:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete/view".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete/view')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/delete/aaa
+---
+2014/07/21 14:03:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/delete/aaa".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/delete...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/user/delete/aaa
+---
+2014/07/21 14:03:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete/view".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete/view')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/delete/aaa
+---
+2014/07/21 14:05:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/delete/aaa".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/delete...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/user/delete/aaa
+---
+2014/07/21 14:06:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/aaa/delete".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/aaa/de...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/user/aaa/delete
+---
+2014/07/21 14:22:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/book/update/1".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/book/update...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/book/update/1
+---
+2014/07/21 14:22:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/book/delete/3".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/book/delete...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/book/delete/3
+---
+2014/07/21 14:24:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/google/delete".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/google...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/user/google/delete
+---
+2014/07/21 14:24:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/google/update".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/google...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BookShareYii/index.php/api/user/google/update
+---

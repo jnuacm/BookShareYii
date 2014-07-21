@@ -113,6 +113,7 @@ class User extends CActiveRecord
             parent::afterValidate();
             $this->password = $this->encrypt($this->password);
         }
+        
         public function encrypt($value) {
             return md5($value);
         }

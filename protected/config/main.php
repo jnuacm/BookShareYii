@@ -37,18 +37,19 @@ return array(
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(
-			'urlFormat'=>'path',
-			'rules'=>array(
-                                array('site/phonelogin', 'pattern'=>'api/login', 'verb'=>'GET'),
-                                array('site/phoneregister', 'pattern'=>'api/register', 'verb'=>'GET'),
-                            
-                                // REST patterns
-                                array('<model>/phoneList', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
-                                array('<model>/phoneView', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'GET'),
-                                array('<model>/phoneUpdate', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'PUT'),
-                                array('<model>/phoneDelete', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'DELETE'),
-                                array('<model>/phoneCreate', 'pattern'=>'api/<model:\w+>', 'verb'=>'POST'),
-			),
+                    'urlFormat'=>'path',
+                    'rules'=>array(
+                        'api/login'=>'site/login',
+                        'api/register'=>'site/register',
+                        // REST patterns
+                        array('book/<suffix>list', 'pattern'=>'api/user/<user:\w+>/<suffix:(()|(own)|(borrowed))>book', 'verb'=>'GET'),
+                        array('<model>/list', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
+                        array('<model>/view', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'GET'),
+                        array('<model>/update', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'PUT'),
+                        array('<model>/delete', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'DELETE'),
+                        array('<model>/create', 'pattern'=>'api/<model:\w+>', 'verb'=>'POST'),
+
+                    ),
 		),
 		
                 /*

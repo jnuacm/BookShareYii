@@ -877,3 +877,741 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/BookShareYii/index.php/api/users
 ---
+2014/07/19 09:00:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('login')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/site/login
+HTTP_REFERER=http://localhost/bookshareyii/
+---
+2014/07/19 09:00:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('login')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/site/login
+HTTP_REFERER=http://localhost/bookshareyii/index.php/site/login
+---
+2014/07/19 09:00:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('login')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/site/login
+HTTP_REFERER=http://localhost/bookshareyii/index.php/site/index
+---
+2014/07/19 09:10:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login/phoneCreate".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('login/phoneCrea...')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/login
+HTTP_REFERER=http://localhost/bookshareyii/index.php/api/login
+---
+2014/07/19 09:10:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('login')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/site/login
+HTTP_REFERER=http://localhost/bookshareyii/index.php/api/login
+---
+2014/07/19 09:10:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('login')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/site/login
+HTTP_REFERER=http://localhost/bookshareyii/index.php/site/login
+---
+2014/07/19 09:15:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('login')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/login
+---
+2014/07/19 09:15:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('login')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/login
+---
+2014/07/19 09:17:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('login')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/login
+---
+2014/07/19 09:17:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('login')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/login
+HTTP_REFERER=http://localhost/bookshareyii/index.php/api/login
+---
+2014/07/19 09:17:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('login')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/login
+HTTP_REFERER=http://localhost/bookshareyii/index.php/api/login
+---
+2014/07/19 09:17:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('login')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/login
+---
+2014/07/19 09:18:42 [error] [exception.CException] exception 'CException' with message 'UserIdentity and its behaviors do not have a method or closure named "hasErrors".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\components\UserIdentity.php(15): CComponent->__call('hasErrors', Array)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\protected\components\UserIdentity.php(15): UserIdentity->hasErrors()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(94): CModel->validate()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#8 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/bookshareyii/index.php/api/login
+HTTP_REFERER=http://localhost/bookshareyii/index.php/api/login
+---
+2014/07/19 09:37:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "register".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('register')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('register')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/register')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/register
+---
+2014/07/20 05:01:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/user
+---
+2014/07/20 05:02:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view1".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('view1')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('view1')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/view1')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/user/view1
+---
+2014/07/20 05:02:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "hoogle".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('hoogle')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('hoogle')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/hoogle')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/user/hoogle
+---
+2014/07/20 05:02:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('list')
+#8 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/list')
+#9 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user
+HTTP_REFERER=http://localhost/bookshareyii/index.php/api/login
+---
+2014/07/20 05:09:24 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:10:02 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:10:04 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:13:22 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:13:22 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:13:23 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:13:23 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:13:23 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:13:24 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:13:24 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:13:24 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\UserController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:13:28 [error] [php] include(BaseController.php): failed to open stream: No such file or directory (D:\Program Files\xampp\htdocs\BookShareYii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php(4): spl_autoload_call()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(354): require()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php (4)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 05:28:08 [error] [php] Undefined index: area (D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php:106)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(286): SiteController->runAction()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/register
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php (106)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 10:34:16 [error] [php] Array to string conversion (D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php:30)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(286): SiteController->runAction()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php (30)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 10:56:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/gg/book/1".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/gg/boo...')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/book/1
+---
+2014/07/20 10:57:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/gg/book/1".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/gg/boo...')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/book/1
+---
+2014/07/20 13:17:48 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 9)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 9)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php/gii
+---
+2014/07/20 13:17:58 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 9)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 9)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php?r=gii
+---
+2014/07/20 13:18:01 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 9)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 9)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php/g
+---
+2014/07/20 13:18:05 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 9)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 9)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php/gii
+---
+2014/07/20 13:18:13 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 9)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 9)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php/api/gii
+---
+2014/07/20 13:18:17 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 9)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 9)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php/gii
+---
+2014/07/20 13:20:48 [error] [exception.CException] exception 'CException' with message 'The URL pattern "(api/<model:\w+>)|(api/user/<user:\w+>/<model:\w+>)" for route "<model>/list" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 0)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 0)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php/gii
+---
+2014/07/20 13:21:01 [error] [exception.CException] exception 'CException' with message 'The URL pattern "(api/<model:\w+>)|(api/user/<user:\w+>/<model:\w+>)" for route "<model>/list" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 0)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 0)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg
+---
+2014/07/20 13:26:26 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 4)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 4)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/
+---
+2014/07/20 13:26:55 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 4)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 4)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/
+---
+2014/07/20 13:26:55 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 4)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 4)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/
+---
+2014/07/20 13:26:57 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 4)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 4)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/
+---
+2014/07/20 13:27:00 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 4)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 4)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php
+---
+2014/07/20 13:27:40 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/<model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 4)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 4)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php
+---
+2014/07/20 13:27:41 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/<model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 4)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 4)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php
+---
+2014/07/20 13:27:41 [error] [exception.CException] exception 'CException' with message 'The URL pattern "api/<user/<user:\w+>/<model:\w+>" for route "<model>/create" is not a valid regular expression.' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php:701
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(270): CUrlRule->__construct(Array, 4)
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(226): CUrlManager->createUrlRule(Array, 4)
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CModule.php(387): CUrlManager->init()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/bookshareyii/index.php
+---
+2014/07/20 13:28:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "book/view".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('book/view')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/book/1
+---
+2014/07/20 13:28:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "book/list".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('book/list')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
+---
+2014/07/20 13:29:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "list".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(270): CController->missingAction('list')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): CController->run('list')
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('book/list')
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
+---
+2014/07/20 13:40:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ownbook/list".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('ownbook/list')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/ownbook
+---
+2014/07/20 13:55:12 [error] [php] Undefined variable: user (D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\BookController.php:125)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): BookController->run()
+#8 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\BookController.php (125)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 14:36:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login/view".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('login/view')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/login/gg
+---
+2014/07/20 14:36:46 [error] [php] Array to string conversion (D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\response.php:14)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#8 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): BookController->run()
+#9 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/ownbook
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\response.php (14)
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\BookController.php (131)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 14:38:05 [error] [php] Array to string conversion (D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\response.php:14)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#8 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): BookController->run()
+#9 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/ownbook
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\response.php (14)
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\BookController.php (131)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 14:38:06 [error] [php] Array to string conversion (D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\response.php:14)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#8 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): BookController->run()
+#9 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/ownbook
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\response.php (14)
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\BookController.php (131)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 14:38:06 [error] [php] Array to string conversion (D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\response.php:14)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#8 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): BookController->run()
+#9 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/ownbook
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\response.php (14)
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\BookController.php (131)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 14:38:09 [error] [php] Array to string conversion (D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\response.php:14)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#5 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#8 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(282): BookController->run()
+#9 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\response.php (14)
+in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\BookController.php (126)
+in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
+2014/07/20 14:45:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/hoogle/book/3".' in D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/hoogle...')
+#1 D:\Program Files\xampp\htdocs\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/hoogle/book/3
+---

@@ -1,5 +1,5 @@
 <?php
-
+require_once 'response.php';
 class SiteController extends Controller
 {
 	/**
@@ -75,29 +75,33 @@ class SiteController extends Controller
 	/**
 	 * Displays the login page
 	 */
-	public function actionPhoneLogin()
+	public function actionLogin()
 	{
-		$model=new LoginForm;
-
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-
-		// collect user input data
-		if(isset($_POST['LoginForm']))
-		{
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
-		}
-		// display the login form
-		$this->render('login',array('model'=>$model));
+            if(isset($_POST['username'])){
+                $form = new LoginForm;
+                $form->attributes = array('username'=>$_POST['username'], 'password'=>$_POST['password']);
+                if($form->validate() && $form->login()){
+                    _sendResponse(200, Book::getUserAllBooks($_POST['username']));
+                }else{
+                    _sendResponse(403, '');
+                }
+            }
 	}
 
+        /*react to the register request*/
+        public function actionRegister(){
+            if(isset($_POST['username'])){
+                $user = new User;
+                $user->attributes = array('username'=>$_POST['username'], 'email'=>$_POST['email'], 'password'=>$_POST['password'],
+                    'area'=>$_POST['area']);
+                if($user->validate() && $user->save()){
+                    _sendResponse(200, CJSON::encode($user));
+                }else{
+                    _sendResponse(403, '');
+                }
+            }
+        }
+        
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
@@ -106,4 +110,5 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
 }

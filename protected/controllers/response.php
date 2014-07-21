@@ -1,5 +1,5 @@
 <?php
-function _sendResponse($status = 200, $body = '', $content_type = 'text/html')
+function _sendResponse($status = 200, $body = '', $content_type = 'text/html;charset=GBK')
 {
     // set the status
     $status_header = 'HTTP/1.1 ' . $status . ' ' . _getStatusCodeMessage($status);
@@ -48,7 +48,7 @@ function _sendResponse($status = 200, $body = '', $content_type = 'text/html')
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title>' . $status . ' ' . $this->_getStatusCodeMessage($status) . '</title>
+    <title>' . $status . ' ' . _getStatusCodeMessage($status) . '</title>
 </head>
 <body>
     <h1>' . _getStatusCodeMessage($status) . '</h1>

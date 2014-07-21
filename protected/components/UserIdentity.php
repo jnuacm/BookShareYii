@@ -15,8 +15,10 @@ class UserIdentity extends CUserIdentity
         $user = User::model()->findByPk($this->username);
         if ($user === null) {
             $this->errorCode = self::ERROR_USERNAME_INVALID;
+            echo 'INVALID';
         } else {
             if ($user->password !== $user->encrypt($this->password)) {
+                echo $user->password ."<br/>" . $user->encrypt($this->password);
                 $this->errorCode = self::ERROR_PASSWORD_INVALID;
             } else {
                 $this->errorCode = self::ERROR_NONE;

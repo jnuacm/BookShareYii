@@ -109,6 +109,10 @@ class Book extends CActiveRecord
         public static function getUserOwnBooks($user){
              return Book::model()->findAllByAttributes(array('owner'=>$user));
         }
+        
+        public static function getUserAllBooks($user){
+            return array('own_book'=>self::getUserOwnBooks($user), 'borrowed_book'=>array());
+        }
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

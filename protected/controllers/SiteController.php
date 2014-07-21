@@ -81,7 +81,7 @@ class SiteController extends Controller
                 $form = new LoginForm;
                 $form->attributes = array('username'=>$_POST['username'], 'password'=>$_POST['password']);
                 if($form->validate() && $form->login()){
-                    _sendResponse(200, Book::getUserAllBooks($_POST['username']));
+                    _sendResponse(200, CJSON::encode(Book::getUserAllBooks($_POST['username'])));
                 }else{
                     _sendResponse(403, '');
                 }
@@ -94,8 +94,8 @@ class SiteController extends Controller
                 $user = new User;
                 $user->attributes = array('username'=>$_POST['username'], 'email'=>$_POST['email'], 'password'=>$_POST['password'],
                     'area'=>$_POST['area']);
-                if($user->validate() && $user->save()){
-                    _sendResponse(200, CJSON::encode($user));
+                if($user->save()){
+                    _sendResponse(200, '');
                 }else{
                     _sendResponse(403, '');
                 }

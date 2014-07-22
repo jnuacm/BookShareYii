@@ -7,18 +7,6 @@ class UserController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-        
-        // Members
-        /**
-         * Key which has to be in HTTP USERNAME and PASSWORD headers 
-         */
-        Const APPLICATION_ID = 'ASCCPE';
-
-        /**
-         * Default response format
-         * either 'json' or 'xml'
-         */
-        private $format = 'json';
     
 	/**
 	 * @return array action filters
@@ -59,14 +47,11 @@ class UserController extends Controller
 	 */
 	public function actionView()
 	{
-		// Check if id was submitted via GET
                 if(!isset($_GET['id']))
-                    _sendResponse(500, 'Error: Parameter <b>id</b> is missing' );
-
+                    _sendResponse(500, 'User ID is missing');
                 $user = User::model()->findByPk($_GET['id']);
-                // Did we find the requested user? If not, raise an error
                 if(is_null($user))
-                    _sendResponse(404, 'No User found with id '.$_GET['id']);
+                    _sendResponse(404, 'No User found');
                 else
                     _sendResponse(200, CJSON::encode($user));
 	}
@@ -78,37 +63,16 @@ class UserController extends Controller
 	public function actionCreate()
 	{
 		$user=new User;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		// Try to assign POST values to attributes
                 foreach($_POST as $var=>$value) {
-                    // Does the user have this attribute? If not raise an error
                     if($user->hasAttribute($var))
                         $user->$var = $value;
                     else
-                        $this->_sendResponse(500, 
-                            sprintf('Parameter <b>%s</b> is not allowed for user', $var ));
+                        $this->_sendResponse(500, 'Parameter Error');
                 }
-                // Try to save the user
                 if($user->save())
                     $this->_sendResponse(200, CJSON::encode($user));
-                else {
-                    // Errors occurred
-                    $msg = "<h1>Error</h1>";
-                    $msg .= sprintf("Couldn't create user");
-                    $msg .= "<ul>";
-                    foreach($user->errors as $attribute=>$attr_errors) {
-                        $msg .= "<li>Attribute: $attribute</li>";
-                        $msg .= "<ul>";
-                        foreach($attr_errors as $attr_error)
-                            $msg .= "<li>$attr_error</li>";
-                        $msg .= "</ul>";
-                    }
-                    $msg .= "</ul>";
-                    $this->_sendResponse(500, $msg);
-                }
+                else
+                    $this->_sendResponse(500, 'Could not Create User');
 	}
 
 	/**
@@ -118,36 +82,23 @@ class UserController extends Controller
 	 */
 	public function actionUpdate()
 	{
-		// Parse the PUT parameters. This didn't work: parse_str(file_get_contents('php://input'), $put_vars);
-                $json = file_get_contents('php://input'); //$GLOBALS['HTTP_RAW_POST_DATA'] is not preferred: http://www.php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data
-                $put_vars = CJSON::decode($json,true);  //true means use associative array
-                
-                $user = User::model()->findByPk($_GET['username']);
-                // Did we find the requested user? If not, raise an error
+                $json = file_get_contents('php://input'); 
+                $put_vars = CJSON::decode($json,true);
+                $user = User::model()->findByPk($_GET['id']);
                 if($user === null)
-                    $this->_sendResponse(400, 
-                            sprintf("Error: Didn't find any user <b>%s</b> with ID <b>%s</b>.",
-                            $_GET['username']));
-
-                // Try to assign PUT parameters to attributes
+                    $this->_sendResponse(400, 'No User found');
+                
                 foreach($put_vars as $var=>$value) {
-                    // Does model have this attribute? If not, raise an error
                     if($user->hasAttribute($var))
                         $user->$var = $value;
                     else {
-                        $this->_sendResponse(500, 
-                            sprintf('Parameter <b>%s</b> is not allowed for user <b>%s</b>',
-                            $var, $_GET['user']) );
+                        $this->_sendResponse(500, 'Parameter Error');
                     }
                 }
-                // Try to save the user
                 if($user->save())
                     $this->_sendResponse(200, CJSON::encode($user));
                 else
-                    // prepare the error $msg
-                    // see actionCreate
-                    // ...
-                    $this->_sendResponse(500, $msg);
+                    $this->_sendResponse(500, 'Could not Update User');
         }
         
 	/**
@@ -158,20 +109,12 @@ class UserController extends Controller
 	public function actionDelete()
 	{
 		$user = User::model()->findByPk($_GET['id']);
-                // Was a user found? If not, raise an error
                 if($user === null)
-                    $this->_sendResponse(400, 
-                            sprintf("Error: Didn't find any user <b>%s</b> with ID <b>%s</b>.",
-                            $_GET['user'], $_GET['id']) );
-
-                // Delete the user
-                $num = $user->delete();
-                if($num>0)
-                    $this->_sendResponse(200, $num);    //this is the only way to work with backbone
+                    $this->_sendResponse(400, 'No User found');
+                 if($user->delete())
+                    $this->_sendResponse(200, 'Delete Success');
                 else
-                    $this->_sendResponse(500, 
-                            sprintf("Error: Couldn't delete user <b>%s</b> with ID <b>%s</b>.",
-                            $_GET['user'], $_GET['id']) );
+                    $this->_sendResponse(500, 'Could not Delete User');
 	}
 
 	/**
@@ -179,10 +122,16 @@ class UserController extends Controller
 	 */
 	public function actionList()
 	{
-		$dataProvider=new CActiveDataProvider('User');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$users = User::model()->findAll();
+                if(empty($users)) 
+                    $this->_sendResponse(200, 'No Users');
+                else
+                {
+                    $rows = array();
+                    foreach($users as $user)
+                    $rows[] = $user->attributes;
+                    $this->_sendResponse(200, CJSON::encode($rows));
+                }
 	}
 
 	/**

@@ -1,6 +1,6 @@
 <?php
-require_once 'response.php';
-class BookController extends Controller
+
+class BorrowerListController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,7 +28,7 @@ class BookController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('list','ownList','borrowedList','view'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -49,25 +49,36 @@ class BookController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView()
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		if(!isset($_GET['id']))
+                    _sendResponse(500, 'Record ID is missing');
+                $model = BorrowerList::model()->findByPk($_GET['id']);
+                if(is_null($model))
+                    _sendResponse(404, 'No record found');
+                else
+                    _sendResponse(200, CJSON::encode($model));
 	}
 
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
 	public function actionCreate()
 	{
-		$model=new Book;
-		if(isset($_POST['isbn']))
+		$model=new BorrowerList;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['id']))
 		{
-                    $model->attributes = array('isbn'=>$_POST['isbn'], 'name'=>$_POST['name'],'description'=>$_POST['description']
-                            ,'author'=>$_POST['author'],'publisher'=>$_POST['publisher'],'owner'=>$_POST['owner'],'holder'=>$_POST['holder']
-                            ,'status'=>$_POST['status']);
-                    if($model->validate() && $model->save()){
-                        _sendResponse(200, CJSON::encode(Book::getUserOwnBooks(Yii::app()->user)));
+                    $model->attributes = array('id'=>$_POST['id'], 'book_id'=>$_POST['book_id'], 'borrower'=>$_POST['borrower']
+                            , 'borrow_time'=>$_POST['borrow_time'], 'return_time'=>NULL);
+                    if($model->save()){
+                        _sendResponse(200, CJSON::encode($model));
                     }else{
-                        _sendResponse(404, 'Could not Create Book');
+                        _sendResponse(404, 'Could not borrow book');
                     }
 		}
 	}
@@ -79,23 +90,21 @@ class BookController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$json = file_get_contents('php://input'); 
-                $put_vars = CJSON::decode($json,true);
-                $book = Book::model()->findByPk($_GET['id']);
-                if($book === null)
-                    $this->_sendResponse(400, 'No Book found');
-                
-                foreach($put_vars as $var=>$value) {
-                    if($book->hasAttribute($var))
-                        $book->$var = $value;
-                    else {
-                        $this->_sendResponse(500, 'Parameter Error');
-                    }
-                }
-                if($book->save())
-                    $this->_sendResponse(200, CJSON::encode($book));
-                else
-                    $this->_sendResponse(500, 'Could not Update Book');
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['BorrowerList']))
+		{
+			$model->attributes=$_POST['BorrowerList'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -103,41 +112,37 @@ class BookController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
+        /*
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-                _sendResponse(200, Book::getUserOwnBooks(Yii::app()->user));
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
+         * */
 
 	/**
 	 * Lists all models.
 	 */
-	public function actionList()
+	public function actionIndex()
 	{
-            $own_books = Book::getUserOwnBooks($_GET['user']);
-            $borrowed_books = Book::getUserBorrowedBooks($_GET['user']);
-            _sendResponse(200, CJSON::encode(array('own_book'=>$own_books, 'borrowed_book'=>$borrowed_books)));
+		$dataProvider=new CActiveDataProvider('BorrowerList');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
 	}
 
-        public function actionOwnList(){
-            $books = Book::getUserOwnBooks($_GET['user']);
-            _sendResponse(200, CJSON::encode($books));
-        }
-        
-        public function actionBorrowedList(){
-            $books = BookUserBorrow::getUserBorrowedBooks($_GET['user']);
-            _sendResponse(200, CJSON::encode($books));
-        }
-        
 	/**
 	 * Manages all models.
 	 */
 	public function actionAdmin()
 	{
-		$model=new Book('search');
+		$model=new BorrowerList('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Book']))
-			$model->attributes=$_GET['Book'];
+		if(isset($_GET['BorrowerList']))
+			$model->attributes=$_GET['BorrowerList'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -148,12 +153,12 @@ class BookController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Book the loaded model
+	 * @return BorrowerList the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Book::model()->findByPk($id);
+		$model=BorrowerList::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -161,11 +166,11 @@ class BookController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Book $model the model to be validated
+	 * @param BorrowerList $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='book-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='borrower-list-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

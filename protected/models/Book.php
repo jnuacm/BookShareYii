@@ -34,14 +34,14 @@ class Book extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, isbn, owner, status', 'required'),
+			array('name, isbn, owner, holder, status', 'required'),
 			array('name, author, publisher', 'length', 'max'=>256),
 			array('isbn, status', 'length', 'max'=>32),
-			array('owner', 'length', 'max'=>64),
+			array('owner, holder', 'length', 'max'=>64),
 			array('description', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, isbn, author, description, publisher, owner, status', 'safe', 'on'=>'search'),
+			array('id, name, isbn, author, description, publisher, owner, holder, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,6 +54,7 @@ class Book extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'owner' => array(self::BELONGS_TO, 'User', 'owner'),
+                        'holder' => array(self::BELONGS_TO, 'User', 'holder'),
                         'book' => array(self::HAS_ONE, 'BookUserBorrow', 'book_id'),
 		);
 	}
@@ -71,6 +72,7 @@ class Book extends CActiveRecord
 			'description' => 'Description',
 			'publisher' => 'Publisher',
 			'owner' => 'Owner',
+                        'holder' => 'Holder',
 			'status' => 'Status',
 		);
 	}
@@ -100,6 +102,7 @@ class Book extends CActiveRecord
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('publisher',$this->publisher,true);
 		$criteria->compare('owner',$this->owner,true);
+                $criteria->compare('holder',$this->holder,true);
 		$criteria->compare('status',$this->status,true);
 
 		return new CActiveDataProvider($this, array(

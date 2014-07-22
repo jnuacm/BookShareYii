@@ -72,9 +72,9 @@ class BookUserBorrowController extends Controller
                     $model->attributes = array('book_id'=>$_POST['book_id'], 'borrower'=>$_POST['borrower']
                             ,'borrow_time'=>$_POST['borrow_time'], 'due_time'=>$_POST['due_time']);
                     if($model->save()){
-                        _sendResponse(200, CJSON::encode(Book::getUserBorrowedBooks(Yii::app()->user)));
+                        _sendResponse(200, CJSON::encode($model));
                     }else{
-                        _sendResponse(404, '');
+                        _sendResponse(404, 'Could not borrow book');
                     }
 		}
 	}

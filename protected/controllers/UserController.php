@@ -63,16 +63,16 @@ class UserController extends Controller
 	public function actionCreate()
 	{
 		$user=new User;
-                foreach($_POST as $var=>$value) {
-                    if($user->hasAttribute($var))
-                        $user->$var = $value;
-                    else
-                        $this->_sendResponse(500, 'Parameter Error');
-                }
-                if($user->save())
-                    $this->_sendResponse(200, CJSON::encode($user));
-                else
-                    $this->_sendResponse(500, 'Could not Create User');
+                if(isset($_POST['username']))
+		{
+                    $user->attributes = array('username'=>$_POST['username'], 'password'=>$_POST['password']
+                            ,'email'=>$_POST['email'],'area'=>$_POST['area']);
+                    if($user->save()){ 
+                        _sendResponse(200, CJSON::encode($user));
+                    }else{
+                        _sendResponse(403, 'Could not register user');
+                    }
+		}
 	}
 
 	/**

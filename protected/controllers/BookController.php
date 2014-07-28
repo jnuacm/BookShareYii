@@ -49,11 +49,15 @@ class BookController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView()
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		if(!isset($_GET['id']))
+                    _sendResponse(500, 'Book ID is missing');
+                $book = Book::model()->findByPk($_GET['id']);
+                if(is_null($book))
+                    _sendResponse(404, 'No Book found');
+                else
+                    _sendResponse(200, CJSON::encode($book));
 	}
 
 	public function actionCreate()
@@ -125,7 +129,7 @@ class BookController extends Controller
         }
         
         public function actionBorrowedList(){
-            $books = BookUserBorrow::getUserBorrowedBooks($_GET['user']);
+            $books = Book::getUserBorrowedBooks($_GET['user']);
             _sendResponse(200, CJSON::encode($books));
         }
         

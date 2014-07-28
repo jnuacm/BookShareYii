@@ -28,11 +28,11 @@ class BookController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('list','ownList','borrowedList','view'),
+				'actions'=>array('list','ownList','borrowedList','view', 'create'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -62,10 +62,10 @@ class BookController extends Controller
 		if(isset($_POST['isbn']))
 		{
                     $model->attributes = array('isbn'=>$_POST['isbn'], 'name'=>$_POST['name'],'description'=>$_POST['description']
-                            ,'author'=>$_POST['author'],'publisher'=>$_POST['publisher'],'owner'=>$_POST['owner'],'holder'=>$_POST['holder']
-                            ,'status'=>$_POST['status']);
-                    if($model->validate() && $model->save()){
-                        _sendResponse(200, CJSON::encode(Book::getUserOwnBooks(Yii::app()->user)));
+                            ,'author'=>$_POST['author'],'publisher'=>$_POST['publisher'],'owner'=> Yii::app()->user->id,'holder'=>Yii::app()->user->id
+                            ,'status'=>'GOOD');
+                    if($model->save()){ 
+                        _sendResponse(200, CJSON::encode(Book::getUserOwnBooks(Yii::app()->user->id)));
                     }else{
                         _sendResponse(404, 'Could not Create Book');
                     }

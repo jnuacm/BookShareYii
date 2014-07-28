@@ -1,5 +1,5 @@
 <?php
-function _sendResponse($status = 200, $body = '', $content_type = 'text/html;charset=GBK')
+function _sendResponse($status = 200, $body = '', $content_type = 'text/html;charset=UTF-8')
 {
     // set the status
     $status_header = 'HTTP/1.1 ' . $status . ' ' . _getStatusCodeMessage($status);

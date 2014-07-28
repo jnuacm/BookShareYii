@@ -119,7 +119,7 @@ class Book extends CActiveRecord
         }
         
         public static function getUserAllBooks($user){
-            return array('own_book'=>self::getUserOwnBooks($user), 'borrowed_book'=>self::getUserBorrowedBooksBooks($user));
+            return array('own_book'=>self::getUserOwnBooks($user), 'borrowed_book'=>self::getUserBorrowedBooks($user));
         }
 	/**
 	 * Returns the static model of the specified AR class.

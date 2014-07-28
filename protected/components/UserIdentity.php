@@ -7,6 +7,7 @@
  */
 class UserIdentity extends CUserIdentity
 {
+    private $_id;
     /**
      * Authenticates a user using the User data model.
      * @return boolean whether authentication succeeds.
@@ -21,9 +22,14 @@ class UserIdentity extends CUserIdentity
                 echo $user->password ."<br/>" . $user->encrypt($this->password);
                 $this->errorCode = self::ERROR_PASSWORD_INVALID;
             } else {
+                $this->_id = $user->username;
                 $this->errorCode = self::ERROR_NONE;
             }
         }
         return !$this->errorCode;
+    }
+    
+    public function getId(){
+        return $this->_id;
     }
 }

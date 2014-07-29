@@ -14,8 +14,8 @@ class BookController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+		//	'accessControl', // perform access control for CRUD operations
+		//	'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -28,15 +28,15 @@ class BookController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('list','ownList','borrowedList','view', 'create'),
+				'actions'=>array('list','ownList','borrowedList','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('update', 'create','delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -49,15 +49,17 @@ class BookController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView()
+	public function actionView($id)
 	{
-		if(!isset($_GET['id']))
+		if(!isset($id)){
                     _sendResponse(500, 'Book ID is missing');
-                $book = Book::model()->findByPk($_GET['id']);
-                if(is_null($book))
+                }
+                $book = Book::model()->findByPk($id);
+                if(is_null($book)){
                     _sendResponse(404, 'No Book found');
-                else
+                }else{
                     _sendResponse(200, CJSON::encode($book));
+                }
 	}
 
 	public function actionCreate()
@@ -85,21 +87,23 @@ class BookController extends Controller
 	{
 		$json = file_get_contents('php://input'); 
                 $put_vars = CJSON::decode($json,true);
-                $book = Book::model()->findByPk($_GET['id']);
-                if($book === null)
+                $book = Book::model()->findByPk($id);
+                if($book === null){
                     $this->_sendResponse(400, 'No Book found');
+                }
                 
                 foreach($put_vars as $var=>$value) {
-                    if($book->hasAttribute($var))
+                    if($book->hasAttribute($var)){
                         $book->$var = $value;
-                    else {
+                    }else {
                         $this->_sendResponse(500, 'Parameter Error');
                     }
                 }
-                if($book->save())
+                if($book->save()){
                     $this->_sendResponse(200, CJSON::encode($book));
-                else
+                }else{
                     $this->_sendResponse(500, 'Could not Update Book');
+                }
 	}
 
 	/**
@@ -110,26 +114,26 @@ class BookController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-                _sendResponse(200, Book::getUserOwnBooks(Yii::app()->user));
+                _sendResponse(200, CJSON::encode(Book::getUserOwnBooks(Yii::app()->user->id)));
 	}
 
 	/**
 	 * Lists all models.
 	 */
-	public function actionList()
+	public function actionList($user)
 	{
-            $own_books = Book::getUserOwnBooks($_GET['user']);
-            $borrowed_books = Book::getUserBorrowedBooks($_GET['user']);
+            $own_books = Book::getUserOwnBooks($user);
+            $borrowed_books = Book::getUserBorrowedBooks($user);
             _sendResponse(200, CJSON::encode(array('own_book'=>$own_books, 'borrowed_book'=>$borrowed_books)));
 	}
 
-        public function actionOwnList(){
-            $books = Book::getUserOwnBooks($_GET['user']);
+        public function actionOwnList($user){
+            $books = Book::getUserOwnBooks($user);
             _sendResponse(200, CJSON::encode($books));
         }
         
-        public function actionBorrowedList(){
-            $books = Book::getUserBorrowedBooks($_GET['user']);
+        public function actionBorrowedList($user){
+            $books = Book::getUserBorrowedBooks($user);
             _sendResponse(200, CJSON::encode($books));
         }
         
@@ -140,9 +144,9 @@ class BookController extends Controller
 	{
 		$model=new Book('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Book']))
+		if(isset($_GET['Book'])){
 			$model->attributes=$_GET['Book'];
-
+                }
 		$this->render('admin',array(
 			'model'=>$model,
 		));

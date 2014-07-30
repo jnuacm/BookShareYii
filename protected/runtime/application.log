@@ -4422,3 +4422,53 @@ Stack trace:
 #12 {main}
 REQUEST_URI=/bookshareyii/index.php/api/book/1
 ---
+2014/07/30 10:33:36 [error] [php] Use of undefined constant request - assumed 'request' (E:\web\BookShareYii\protected\controllers\RequestController.php:77)
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\filters\CFilterChain.php(133): RequestController->runAction()
+#1 E:\web\BookShareYii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 E:\web\BookShareYii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 E:\web\BookShareYii\framework\web\filters\CInlineFilter.php(58): RequestController->filterAccessControl()
+#4 E:\web\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 E:\web\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
+#6 E:\web\BookShareYii\framework\web\CController.php(265): RequestController->runActionWithFilters()
+#7 E:\web\BookShareYii\framework\web\CWebApplication.php(282): RequestController->run()
+#8 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 E:\web\BookShareYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/request
+in E:\web\BookShareYii\protected\controllers\RequestController.php (77)
+in E:\web\BookShareYii\index.php (13)
+2014/07/30 10:50:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/request/from/gg".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/request/fro...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/request/from/gg
+---
+2014/07/30 10:53:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/request/from/gg".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/request/fro...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/request/from/gg
+---
+2014/07/30 10:53:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/request/from/gg".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/request/fro...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/request/from/gg
+---
+2014/07/30 10:54:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "fromlist".' in E:\web\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CController.php(270): CController->missingAction('fromlist')
+#1 E:\web\BookShareYii\framework\web\CWebApplication.php(282): CController->run('fromlist')
+#2 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('request/fromlis...')
+#3 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\web\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/request/from/gg
+---

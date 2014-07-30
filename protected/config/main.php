@@ -43,6 +43,7 @@ return array(
                         'api/register'=>'site/register',
                         // REST patterns
                         array('book/<suffix>list', 'pattern'=>'api/user/<user:\w+>/<suffix:(()|(own)|(borrowed))>book', 'verb'=>'GET'),
+                        array('request/<suffix>userList', 'pattern'=>'api/request/<suffix:(()|(from)|(to))>/<user:\w+>', 'verb'=>'GET'),
                         
                         array('<model>/list', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
                         array('<model>/view', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'GET'),

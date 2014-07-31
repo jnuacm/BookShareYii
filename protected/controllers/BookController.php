@@ -14,7 +14,7 @@ class BookController extends Controller
 	public function filters()
 	{
 		return array(
-		//	'accessControl', // perform access control for CRUD operations
+			'accessControl', // perform access control for CRUD operations
 		//	'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -71,7 +71,10 @@ class BookController extends Controller
                             ,'author'=>$_POST['author'],'publisher'=>$_POST['publisher'],'owner'=> Yii::app()->user->id,'holder'=>Yii::app()->user->id
                             ,'status'=>'GOOD');
                     if($model->save()){ 
-                        _sendResponse(200, CJSON::encode(Book::getUserOwnBooks(Yii::app()->user->id)));
+                        $user = Yii::app()->user->id;
+                        $own_books = Book::getUserOwnBooks($user);
+                        $borrowed_books = Book::getUserBorrowedBooks($user);
+                        _sendResponse(200, CJSON::encode(array('own_book'=>$own_books, 'borrowed_book'=>$borrowed_books)));
                     }else{
                         _sendResponse(404, 'Could not Create Book');
                     }
@@ -114,7 +117,10 @@ class BookController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-                _sendResponse(200, CJSON::encode(Book::getUserOwnBooks(Yii::app()->user->id)));
+                $user = Yii::app()->user->id;
+                $own_books = Book::getUserOwnBooks($user);
+                $borrowed_books = Book::getUserBorrowedBooks($user);
+                _sendResponse(200, CJSON::encode(array('own_book'=>$own_books, 'borrowed_book'=>$borrowed_books)));
 	}
 
 	/**

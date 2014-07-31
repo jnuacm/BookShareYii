@@ -1672,7 +1672,7 @@ REQUEST_URI=/bookshareyii/index.php/api/login
 in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\response.php (14)
 in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\SiteController.php (84)
 in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
-2014/07/21 05:50:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ²»ÖªµÀÕâÑùµÄÖ÷»ú¡£ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/21 05:50:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -1699,7 +1699,7 @@ Stack trace:
 REQUEST_URI=/bookshareyii/index.php/api/login
 HTTP_REFERER=http://127.0.0.1/bookshareyii/res.html
 ---
-2014/07/21 05:50:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ²»ÖªµÀÕâÑùµÄÖ÷»ú¡£ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/21 05:50:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -1726,7 +1726,7 @@ Stack trace:
 REQUEST_URI=/bookshareyii/index.php/api/login
 HTTP_REFERER=http://127.0.0.1/bookshareyii/res.html
 ---
-2014/07/21 05:50:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ²»ÖªµÀÕâÑùµÄÖ÷»ú¡£ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/21 05:50:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -1753,7 +1753,7 @@ Stack trace:
 REQUEST_URI=/bookshareyii/index.php/api/login
 HTTP_REFERER=http://127.0.0.1/bookshareyii/res.html
 ---
-2014/07/21 05:51:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+2014/07/21 05:51:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½È·ï¿½ð¸´»ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð·ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½
 ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
@@ -1781,7 +1781,7 @@ Stack trace:
 REQUEST_URI=/bookshareyii/index.php/api/login
 HTTP_REFERER=http://127.0.0.1/bookshareyii/res.html
 ---
-2014/07/21 05:51:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+2014/07/21 05:51:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½È·ï¿½ð¸´»ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð·ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½
 ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
@@ -1809,7 +1809,7 @@ Stack trace:
 REQUEST_URI=/bookshareyii/index.php/api/login
 HTTP_REFERER=http://127.0.0.1/bookshareyii/res.html
 ---
-2014/07/21 05:51:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ²»ÖªµÀÕâÑùµÄÖ÷»ú¡£ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/21 05:51:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -2895,7 +2895,7 @@ Stack trace:
 REQUEST_URI=/bookshareyii/index.php/api/book
 in D:\Program Files\xampp\htdocs\BookShareYii\protected\controllers\BookController.php (73)
 in D:\Program Files\xampp\htdocs\BookShareYii\index.php (13)
-2014/07/27 16:00:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ²»ÖªµÀÕâÑùµÄÖ÷»ú¡£ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/27 16:00:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -3386,7 +3386,7 @@ Stack trace:
 #16 {main}
 REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
 ---
-2014/07/28 05:46:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+2014/07/28 05:46:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½È·ï¿½ð¸´»ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð·ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½
 ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 E:\web\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
@@ -3477,7 +3477,7 @@ Stack trace:
 #16 {main}
 REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
 ---
-2014/07/28 07:48:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ²»ÖªµÀÕâÑùµÄÖ÷»ú¡£ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/28 07:48:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 E:\web\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 E:\web\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -3504,7 +3504,7 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
 ---
-2014/07/28 07:49:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ÕâÊÇÔÚÖ÷»úÃû½âÎöÊ±Í¨³£³öÏÖµÄÔÝÊ±´íÎó£¬ËüÒâÎ¶×Å±¾µØ·þÎñÆ÷Ã»ÓÐ´ÓÈ¨Íþ·þÎñÆ÷ÉÏÊÕµ½ÏìÓ¦¡£ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/28 07:49:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¶ï¿½Å±ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð´ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 E:\web\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 E:\web\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -3531,7 +3531,7 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
 ---
-2014/07/28 07:50:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ÕâÊÇÔÚÖ÷»úÃû½âÎöÊ±Í¨³£³öÏÖµÄÔÝÊ±´íÎó£¬ËüÒâÎ¶×Å±¾µØ·þÎñÆ÷Ã»ÓÐ´ÓÈ¨Íþ·þÎñÆ÷ÉÏÊÕµ½ÏìÓ¦¡£ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/28 07:50:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¶ï¿½Å±ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð´ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 E:\web\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 E:\web\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -3558,7 +3558,7 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
 ---
-2014/07/28 10:01:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ÕâÊÇÔÚÖ÷»úÃû½âÎöÊ±Í¨³£³öÏÖµÄÔÝÊ±´íÎó£¬ËüÒâÎ¶×Å±¾µØ·þÎñÆ÷Ã»ÓÐ´ÓÈ¨Íþ·þÎñÆ÷ÉÏÊÕµ½ÏìÓ¦¡£ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/28 10:01:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¶ï¿½Å±ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð´ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 E:\web\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 E:\web\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -3585,7 +3585,7 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
 ---
-2014/07/28 10:09:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ÕâÊÇÔÚÖ÷»úÃû½âÎöÊ±Í¨³£³öÏÖµÄÔÝÊ±´íÎó£¬ËüÒâÎ¶×Å±¾µØ·þÎñÆ÷Ã»ÓÐ´ÓÈ¨Íþ·þÎñÆ÷ÉÏÊÕµ½ÏìÓ¦¡£ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/28 10:09:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¶ï¿½Å±ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð´ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 E:\web\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 E:\web\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -3612,7 +3612,7 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
 ---
-2014/07/28 10:10:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ÕâÊÇÔÚÖ÷»úÃû½âÎöÊ±Í¨³£³öÏÖµÄÔÝÊ±´íÎó£¬ËüÒâÎ¶×Å±¾µØ·þÎñÆ÷Ã»ÓÐ´ÓÈ¨Íþ·þÎñÆ÷ÉÏÊÕµ½ÏìÓ¦¡£ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/28 10:10:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¶ï¿½Å±ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð´ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 E:\web\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 E:\web\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -3638,7 +3638,7 @@ Stack trace:
 #21 {main}
 REQUEST_URI=/bookshareyii/index.php/api/login
 ---
-2014/07/28 10:11:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ÕâÊÇÔÚÖ÷»úÃû½âÎöÊ±Í¨³£³öÏÖµÄÔÝÊ±´íÎó£¬ËüÒâÎ¶×Å±¾µØ·þÎñÆ÷Ã»ÓÐ´ÓÈ¨Íþ·þÎñÆ÷ÉÏÊÕµ½ÏìÓ¦¡£ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/28 10:11:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¶ï¿½Å±ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð´ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ ' in E:\web\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 E:\web\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 E:\web\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -3803,7 +3803,7 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/bookshareyii/index.php/api/user/gg/ownedbook
 ---
-2014/07/28 13:29:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ²»ÖªµÀÕâÑùµÄÖ÷»ú¡£ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
+2014/07/28 13:29:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ï¿½ï¿½Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ' in D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 D:\Program Files\xampp\htdocs\BookShareYii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -4421,54 +4421,3 @@ Stack trace:
 #11 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
 #12 {main}
 REQUEST_URI=/bookshareyii/index.php/api/book/1
----
-2014/07/30 10:33:36 [error] [php] Use of undefined constant request - assumed 'request' (E:\web\BookShareYii\protected\controllers\RequestController.php:77)
-Stack trace:
-#0 E:\web\BookShareYii\framework\web\filters\CFilterChain.php(133): RequestController->runAction()
-#1 E:\web\BookShareYii\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#2 E:\web\BookShareYii\framework\web\CController.php(1145): CAccessControlFilter->filter()
-#3 E:\web\BookShareYii\framework\web\filters\CInlineFilter.php(58): RequestController->filterAccessControl()
-#4 E:\web\BookShareYii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
-#5 E:\web\BookShareYii\framework\web\CController.php(291): CFilterChain->run()
-#6 E:\web\BookShareYii\framework\web\CController.php(265): RequestController->runActionWithFilters()
-#7 E:\web\BookShareYii\framework\web\CWebApplication.php(282): RequestController->run()
-#8 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#9 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#10 E:\web\BookShareYii\index.php(13): CWebApplication->run()
-REQUEST_URI=/bookshareyii/index.php/api/request
-in E:\web\BookShareYii\protected\controllers\RequestController.php (77)
-in E:\web\BookShareYii\index.php (13)
-2014/07/30 10:50:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/request/from/gg".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/request/fro...')
-#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 E:\web\BookShareYii\index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/bookshareyii/index.php/api/request/from/gg
----
-2014/07/30 10:53:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/request/from/gg".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/request/fro...')
-#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 E:\web\BookShareYii\index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/bookshareyii/index.php/api/request/from/gg
----
-2014/07/30 10:53:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/request/from/gg".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/request/fro...')
-#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 E:\web\BookShareYii\index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/bookshareyii/index.php/api/request/from/gg
----
-2014/07/30 10:54:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "fromlist".' in E:\web\BookShareYii\framework\web\CController.php:483
-Stack trace:
-#0 E:\web\BookShareYii\framework\web\CController.php(270): CController->missingAction('fromlist')
-#1 E:\web\BookShareYii\framework\web\CWebApplication.php(282): CController->run('fromlist')
-#2 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('request/fromlis...')
-#3 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#4 E:\web\BookShareYii\index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/bookshareyii/index.php/api/request/from/gg
----

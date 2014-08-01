@@ -28,7 +28,7 @@ class BookController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('list','ownList','borrowedList','view'),
+				'actions'=>array('allList','ownList','borrowedList','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -122,7 +122,7 @@ class BookController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionList($user)
+	public function actionAllList($user)
 	{
             $own_books = Book::getUserOwnBooks($user);
             $borrowed_books = Book::getUserBorrowedBooks($user);

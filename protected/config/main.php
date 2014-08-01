@@ -42,8 +42,12 @@ return array(
                         'api/login'=>'site/login',
                         'api/register'=>'site/register',
                         // REST patterns
-                        array('book/<suffix>list', 'pattern'=>'api/user/<user:\w+>/<suffix:(()|(own)|(borrowed))>book', 'verb'=>'GET'),
+                        array('book/<suffix>list', 'pattern'=>'api/book/<user:\w+>/<suffix:((all)|(own)|(borrowed))>', 'verb'=>'GET'),
                         array('request/<suffix>userList', 'pattern'=>'api/request/<suffix:(()|(from)|(to))>/<user:\w+>', 'verb'=>'GET'),
+                        
+                        array('friendship/friend', 'pattern'=>'api/friend/<user:\w+>', 'verb'=>'GET'),
+                        array('friendship/create', 'pattern'=>'api/friend', 'verb'=>'POST'),
+                        array('friendship/delete', 'pattern'=>'api/friend/<user:\w+>', 'verb'=>'DELETE'),
                         
                         array('<model>/list', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
                         array('<model>/view', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'GET'),

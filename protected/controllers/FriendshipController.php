@@ -1,5 +1,5 @@
 <?php
-
+require_once 'response.php';
 class FriendshipController extends Controller
 {
 	/**
@@ -28,15 +28,11 @@ class FriendshipController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('list','view'),
+				'actions'=>array('list','view','friend','create','delete'),
 				'users'=>array('*'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -68,7 +64,9 @@ class FriendshipController extends Controller
                     $model->attributes = array('user1'=>Yii::app()->user->id, 'user2'=>$_POST['user2']
                             ,'time'=>new CDbExpression('NOW()'));
                     if($model->save()){ 
-                        _sendResponse(200, CJSON::encode($model));
+                        $user = Yii::app()->user->id;
+                        $friends = Friendship::getUserFriends($user);
+                        _sendResponse(200, CJSON::encode($friends));
                     }else{
                         _sendResponse(403, 'Could not create relation');
                     }
@@ -120,7 +118,7 @@ class FriendshipController extends Controller
 	{
 		$models = Friendship::model()->findAll();
                 if(empty($models)) 
-                    $this->_sendResponse(200, 'No Models');
+                    $this->_sendResponse(200, 'No Friendship');
                 else
                 {
                     $rows = array();
@@ -144,8 +142,13 @@ class FriendshipController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        public function actionFriend($user) {
+            $friends = Friendship::getUserFriends($user);
+            _sendResponse(200, CJSON::encode($friends));
+        }
 
-	/**
+        /**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded

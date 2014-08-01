@@ -101,7 +101,7 @@ class Friendship extends CActiveRecord
                 if($users->attributes['user1'] == $user)
                     $friends[] = $users->attributes['user2'];
                 else if($users->attributes['user2'] == $user)
-                    $friends[] = $users->attributes['user2'];
+                    $friends[] = $users->attributes['user1'];
             }
             $rows = array();
             foreach($friends as $friend){

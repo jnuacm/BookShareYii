@@ -4960,3 +4960,89 @@ Stack trace:
 #11 {main}
 REQUEST_URI=/bookshareyii/index.php/api/login
 ---
+2014/08/01 18:23:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/gg/book".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/gg/boo...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
+---
+2014/08/01 18:23:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/book/gg/all".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/book/gg/all')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/gg/all
+---
+2014/08/01 18:24:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "alllist".' in E:\web\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CController.php(270): CController->missingAction('alllist')
+#1 E:\web\BookShareYii\framework\web\CWebApplication.php(282): CController->run('alllist')
+#2 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('book/alllist')
+#3 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\web\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/gg/all
+---
+2014/08/01 18:24:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "alllist".' in E:\web\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CController.php(270): CController->missingAction('alllist')
+#1 E:\web\BookShareYii\framework\web\CWebApplication.php(282): CController->run('alllist')
+#2 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('book/alllist')
+#3 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\web\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/gg/all
+---
+2014/08/01 18:24:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "alllist".' in E:\web\BookShareYii\framework\web\CController.php:483
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CController.php(270): CController->missingAction('alllist')
+#1 E:\web\BookShareYii\framework\web\CWebApplication.php(282): CController->run('alllist')
+#2 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('book/alllist')
+#3 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\web\BookShareYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/gg/all
+---
+2014/08/01 18:25:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/gg/book".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/gg/boo...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
+---
+2014/08/01 18:25:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api//book/gg/all".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api//book/gg/al...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api//book/gg/all
+---
+2014/08/01 18:27:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api//book/gg/all".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api//book/gg/al...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api//book/gg/all
+---
+2014/08/01 18:27:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/gg/book".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/gg/boo...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/book
+---
+2014/08/01 18:27:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api//book/gg/all".' in E:\web\BookShareYii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\web\BookShareYii\framework\web\CWebApplication.php(141): CWebApplication->runController('api//book/gg/al...')
+#1 E:\web\BookShareYii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\web\BookShareYii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api//book/gg/all
+---

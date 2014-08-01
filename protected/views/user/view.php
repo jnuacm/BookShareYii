@@ -25,5 +25,6 @@ $this->menu=array(
 		'email',
 		'password',
 		'area',
+		'is_group',
 	),
 )); ?>

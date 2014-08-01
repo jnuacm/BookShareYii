@@ -80,11 +80,11 @@ class UserController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate()
+	public function actionUpdate($id)
 	{
                 $json = file_get_contents('php://input'); 
                 $put_vars = CJSON::decode($json,true);
-                $user = User::model()->findByPk($_GET['id']);
+                $user = User::model()->findByPk($id);
                 if($user === null)
                     $this->_sendResponse(400, 'No User found');
                 
@@ -106,15 +106,11 @@ class UserController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete()
+	public function actionDelete($id)
 	{
-		$user = User::model()->findByPk($_GET['id']);
-                if($user === null)
-                    $this->_sendResponse(400, 'No User found');
-                 if($user->delete())
-                    $this->_sendResponse(200, 'Delete Success');
-                else
-                    $this->_sendResponse(500, 'Could not Delete User');
+		$this->loadModel($id)->delete();
+                $users = $this->actionList();
+                _sendResponse(200, CJSON::encode(array('user'=>$users)));
 	}
 
 	/**

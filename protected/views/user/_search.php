@@ -26,6 +26,11 @@
 		<?php echo $form->textField($model,'area',array('size'=>60,'maxlength'=>256)); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'is_group'); ?>
+		<?php echo $form->textField($model,'is_group'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

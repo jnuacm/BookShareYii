@@ -71,7 +71,7 @@ class RequestController extends Controller
 		$request=new Request;
 		if(isset($_POST['to']))
 		{
-                    $request->attributes = array('time'=>$_POST['time'],'from'=>Yii::app()->user->id,'to'=>$_POST['to']
+                    $request->attributes = array('time'=>new CDbExpression('NOW()'),'from'=>Yii::app()->user->id,'to'=>$_POST['to']
                             ,'type'=>$_POST['type'],'description'=>$_POST['description'],'status'=>0);
                     if($request->save()){ 
                         _sendResponse(200, CJSON::encode($request));

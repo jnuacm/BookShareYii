@@ -43,6 +43,12 @@
 		<?php echo $form->error($model,'area'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'is_group'); ?>
+		<?php echo $form->textField($model,'is_group'); ?>
+		<?php echo $form->error($model,'is_group'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

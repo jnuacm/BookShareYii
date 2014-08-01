@@ -8,10 +8,16 @@
  * @property string $email
  * @property string $password
  * @property string $area
+ * @property integer $is_group
  *
  * The followings are the available model relations:
- * @property TblBook[] $tblBooks
- * @property TblBookUserBorrow[] $tblBookUserBorrows
+ * @property Book[] $books
+ * @property Book[] $books1
+ * @property BookUserBorrow[] $bookUserBorrows
+ * @property Friendship[] $friendships
+ * @property Friendship[] $friendships1
+ * @property Request[] $requests
+ * @property Request[] $requests1
  */
 class User extends CActiveRecord
 {
@@ -31,13 +37,13 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, email, password', 'required'),
+			array('username, email, password, is_group', 'required'),
+			array('is_group', 'numerical', 'integerOnly'=>true),
 			array('username', 'length', 'max'=>64),
 			array('email, password, area', 'length', 'max'=>256),
-                        array('email, username', 'unique'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('username, email, password, area', 'safe', 'on'=>'search'),
+			array('username, email, password, area, is_group', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -49,8 +55,13 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'tblBooks' => array(self::HAS_MANY, 'TblBook', 'owner'),
-			'tblBookUserBorrows' => array(self::HAS_MANY, 'TblBookUserBorrow', 'borrower'),
+			'books' => array(self::HAS_MANY, 'Book', 'owner'),
+			'books1' => array(self::HAS_MANY, 'Book', 'holder'),
+			'bookUserBorrows' => array(self::HAS_MANY, 'BookUserBorrow', 'borrower'),
+			'friendships' => array(self::HAS_MANY, 'Friendship', 'user1'),
+			'friendships1' => array(self::HAS_MANY, 'Friendship', 'user2'),
+			'requests' => array(self::HAS_MANY, 'Request', 'from'),
+			'requests1' => array(self::HAS_MANY, 'Request', 'to'),
 		);
 	}
 
@@ -64,6 +75,7 @@ class User extends CActiveRecord
 			'email' => 'Email',
 			'password' => 'Password',
 			'area' => 'Area',
+			'is_group' => 'Is Group',
 		);
 	}
 
@@ -89,6 +101,7 @@ class User extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('area',$this->area,true);
+		$criteria->compare('is_group',$this->is_group);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

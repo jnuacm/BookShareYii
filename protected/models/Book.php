@@ -116,7 +116,7 @@ class Book extends CActiveRecord
         
         public static function getUserBorrowedBooks($user){
              //return Book::model()->findAllByAttributes(array('holder'=>$user));
-            return Book::model()->findAllBySql("select * from tbl_book where holder=:holder and owner <> holder", array(':holder'=>$user));
+            return Book::model()->findAllBySql("select * from tbl_book where holder=:holder and owner<>holder", array(':holder'=>$user));
         }
         
         public static function getUserAllBooks($user){

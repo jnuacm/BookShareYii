@@ -81,7 +81,9 @@ class SiteController extends Controller
                 $form = new LoginForm;
                 $form->attributes = array('username'=>$_POST['username'], 'password'=>$_POST['password']);
                 if($form->validate() && $form->login()){
-                    _sendResponse(200, CJSON::encode(Book::getUserAllBooks($_POST['username'])));
+                    $books = Book::getUserAllBooks($_POST['username']);
+                    $friends = Friendship::getUserFriends($_POST['username']);
+                    _sendResponse(200, CJSON::encode(array('books'=>$books, 'friends'=>$friends)));
                 }else{
                     _sendResponse(403, '');
                 }

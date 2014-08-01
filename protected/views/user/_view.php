@@ -21,5 +21,9 @@
 	<?php echo CHtml::encode($data->area); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('is_group')); ?>:</b>
+	<?php echo CHtml::encode($data->is_group); ?>
+	<br />
+
 
 </div>

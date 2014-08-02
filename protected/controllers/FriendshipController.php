@@ -15,7 +15,7 @@ class FriendshipController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+		//	'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -102,29 +102,17 @@ class FriendshipController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete($friend)
 	{
-		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionlist()
-	{
-		$models = Friendship::model()->findAll();
-                if(empty($models)) 
-                    $this->_sendResponse(200, 'No Friendship');
-                else
-                {
-                    $rows = array();
-                    foreach($modelss as $model)
-                    $rows[] = $model->attributes;
-                    $this->_sendResponse(200, CJSON::encode($rows));
+                $user = Yii::app()->user->id;
+                $sql = "SELECT * FROM tbl_friendship WHERE (user1=:user AND user2=:friend) OR (user1=:friend AND user2=:user)";
+                $friendship = Friendship::model()->findBySql($sql, array(':user'=>$user,':friend'=>$friend));
+                if($friendship === null){
+                    _sendResponse(400, 'User is not your friend');
+                }else {
+                    $friendship->delete();
+                    $friends = Friendship::getUserFriends($user);
+                    _sendResponse(200, CJSON::encode($friends));
                 }
 	}
 
@@ -143,7 +131,8 @@ class FriendshipController extends Controller
 		));
 	}
         
-        public function actionFriend($user) {
+        public function actionList() {
+            $user=Yii::app()->user->id;
             $friends = Friendship::getUserFriends($user);
             _sendResponse(200, CJSON::encode($friends));
         }

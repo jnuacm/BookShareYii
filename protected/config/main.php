@@ -45,9 +45,9 @@ return array(
                         array('book/<suffix>list', 'pattern'=>'api/book/<user:\w+>/<suffix:((all)|(own)|(borrowed))>', 'verb'=>'GET'),
                         array('request/<suffix>userList', 'pattern'=>'api/request/<suffix:(()|(from)|(to))>/<user:\w+>', 'verb'=>'GET'),
                         
-                        array('friendship/friend', 'pattern'=>'api/friend/<user:\w+>', 'verb'=>'GET'),
+                        array('friendship/list', 'pattern'=>'api/friend/<user:\w+>', 'verb'=>'GET'),
                         array('friendship/create', 'pattern'=>'api/friend', 'verb'=>'POST'),
-                        array('friendship/delete', 'pattern'=>'api/friend/<user:\w+>', 'verb'=>'DELETE'),
+                        array('friendship/delete', 'pattern'=>'api/friend/<friend:\w+>', 'verb'=>'DELETE'),
                         
                         array('<model>/list', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
                         array('<model>/view', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'GET'),

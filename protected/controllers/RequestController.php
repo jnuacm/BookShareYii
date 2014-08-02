@@ -15,7 +15,7 @@ class RequestController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+		//	'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -81,6 +81,36 @@ class RequestController extends Controller
 		}
 	}
 
+        private function lendBook($request){
+            $from = $request['from'];
+            $desc = CJSON::decode($request['description']);
+            $bookId = $desc['bookid'];
+            $book = Book::model()->findByPk($bookId);
+            $borrow = new BookUserBorrow;
+            $borrow->attributes = array('book_id'=>$bookId, 'borrower'=>$from, 'borrow_time' => new CDbExpression('NOW()'), 'due_time'=>null, 'return_time'=>null);
+            $book->holder = Yii::app()->user->id;
+            if($book->save() && $borrow->save()){
+                _sendResponse(200);
+                $request->status = 2;
+                $request->save();
+            }
+        }
+        
+        private function regainBook($request){
+            $desc = CJSON::decode($request['description']);
+            $bookId = $desc['bookid'];
+            $book = Book::model()->findByPk($bookId);
+            $sql = 'SELECT MAX(id), book_id, borrower, borrow_time, due_time, return_time FROM tbl_book_user_borrow WHERE book_id=:book_id';
+            $borrow = BookUserBorrow::model()->findBySql($sql, array(':book_id' => $bookId));
+            $borrow->return_time = new CDbExpression('NOW()');
+            $book->holder = Yii::app()->user->id;
+            if($book->save() && $borrow->save()){
+                _sendResponse(200);
+                $request->status = 2;
+                $request->save();
+            }
+        }
+        
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -88,23 +118,29 @@ class RequestController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Request']))
-		{
-			$model->attributes=$_POST['Request'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
+            $motion = array(1=>'lendBook', 2=>'regainBook');
+            $request = Request::model()->findByPk($id);
+            if($request == null){
+                _sendResponse(404);
+            }
+            $data = array();
+            parse_str(file_get_contents('php://input'), $data);
+            if(isset($data['status'])){
+                if($data['status'] == '1'){
+                    $this->$motion[$request->getAttribute('type')]($request);
+                }else if($data['status'] == '2' || $data['status'] == '3'){
+                    $this->turnDownOrAcknowledge($request, $data['status']);
+                }
+            }
 	}
 
+        private function turnDownOrAcknowledge($request, $status){
+            $request->status = $status;
+            if($request->save()){
+                _sendResponse(200);
+            }
+        }
+       
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.

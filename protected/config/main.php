@@ -43,6 +43,7 @@ return array(
                         'api/register'=>'site/register',
                         // REST patterns
                         array('book/<suffix>list', 'pattern'=>'api/book/<user:\w+>/<suffix:((all)|(own)|(borrowed))>', 'verb'=>'GET'),
+                        array('bookUserBorrow/list', 'pattern'=>'api/book/<id:\w+>/history', 'very'=>'GET'),
                         array('request/<suffix>userList', 'pattern'=>'api/request/<suffix:(()|(from)|(to))>/<user:\w+>', 'verb'=>'GET'),
                         
                         array('friendship/friend', 'pattern'=>'api/friend/<user:\w+>', 'verb'=>'GET'),

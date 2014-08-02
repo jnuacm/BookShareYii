@@ -5,8 +5,12 @@
 
 <div class="view">
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('book_id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->book_id), array('view', 'id'=>$data->book_id)); ?>
+	<?php echo CHtml::encode($data->book_id); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('borrower')); ?>:</b>
@@ -19,6 +23,10 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('due_time')); ?>:</b>
 	<?php echo CHtml::encode($data->due_time); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('return_time')); ?>:</b>
+	<?php echo CHtml::encode($data->return_time); ?>
 	<br />
 
 

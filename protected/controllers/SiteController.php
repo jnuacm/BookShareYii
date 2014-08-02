@@ -83,7 +83,7 @@ class SiteController extends Controller
                 if($form->validate() && $form->login()){
                     $books = Book::getUserAllBooks($_POST['username']);
                     $friends = Friendship::getUserFriends($_POST['username']);
-                    _sendResponse(200, CJSON::encode(array('books'=>$books, 'friends'=>$friends)));
+                    _sendResponse(200, CJSON::encode(array_merge($books, array('friend'=>$friends))));
                 }else{
                     _sendResponse(403, '');
                 }

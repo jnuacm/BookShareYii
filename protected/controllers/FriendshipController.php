@@ -102,13 +102,20 @@ class FriendshipController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete($friend)
 	{
-		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+                $user = Yii::app()->user->id;
+                $friendship = Friendship::model()->findByAttributes(array());
+                $friendship = Friendship::model()->findBySql("select * from tbl_friendship where user1=:user and user2=:friend", array(':user'=>$user,':friend'=>$friend));
+                if($friendship === null)
+                    $friendship = Friendship::model()->findBySql("select * from tbl_friendship where user1=:friend and user2=:user", array(':user'=>$user,':friend'=>$friend));
+                if($friendship === null)
+                    _sendResponse(400, 'User is not your friend');
+                else {
+                    $friendship->delete();
+                    $friends = Friendship::getUserFriends($user);
+                    _sendResponse(200, CJSON::encode($friends));
+                }
 	}
 
 	/**

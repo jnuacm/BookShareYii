@@ -106,11 +106,12 @@ class Friendship extends CActiveRecord
             $rows = array();
             foreach($friends as $friend){
                 //$rows[] = User::model()->findAllByAttributes(array('username'=>$friend));
-                $criteria=new CDbCriteria;  
-                $criteria->select=array('username,email,area,is_group');
-                $criteria->condition='username=:user';  
-                $criteria->params=array(':user'=>$friend);  
-                $rows[]=User::model()->find($criteria);
+                $db = Yii::app()->db;
+                $rows[] = $db->createCommand()
+                        ->select('username,email,area,is_group')
+                        ->from('tbl_user')
+                        ->where('username=:user', array(':user'=>$friend))
+                        ->queryRow();
             }
             return $rows;
         }

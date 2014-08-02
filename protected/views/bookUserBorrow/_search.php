@@ -12,6 +12,11 @@
 )); ?>
 
 	<div class="row">
+		<?php echo $form->label($model,'id'); ?>
+		<?php echo $form->textField($model,'id'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'book_id'); ?>
 		<?php echo $form->textField($model,'book_id'); ?>
 	</div>
@@ -29,6 +34,11 @@
 	<div class="row">
 		<?php echo $form->label($model,'due_time'); ?>
 		<?php echo $form->textField($model,'due_time'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'return_time'); ?>
+		<?php echo $form->textField($model,'return_time'); ?>
 	</div>
 
 	<div class="row buttons">

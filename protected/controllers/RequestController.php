@@ -111,14 +111,24 @@ class RequestController extends Controller
             }
         }
         
-	/**
+        private function makeFriend($request) {
+            $friendship = new Friendship;
+            $user = Yii::app()->user->id;
+            $friendship->attributes = array('user1'=>$user, 'user2'=>$request['to'], 'time'=>new CDbExpression('NOW()'));
+            if($friendship->save()) {
+                $friends = Friendship::getUserFriends($user);
+                _sendResponse(200, CJSON::encode($friends));
+            }
+        }
+
+        /**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
 	public function actionUpdate($id)
 	{
-            $motion = array(1=>'lendBook', 2=>'regainBook');
+            $motion = array(1=>'lendBook', 2=>'regainBook', 3=>'makeFriend');
             $request = Request::model()->findByPk($id);
             if($request == null){
                 _sendResponse(404);

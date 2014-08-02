@@ -100,8 +100,18 @@ class BookUserBorrow extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public static function getBookHistory($id) {
+            $db = Yii::app()->db;
+            $history = $db->createCommand()
+                    ->select('id,borrower,borrow_time,due_time,return_time')
+                    ->from('tbl_book_user_borrow')
+                    ->where('book_id=:id', array(':id'=>$id))
+                    ->queryAll();
+            return $history;
+        }
 
-	/**
+        /**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.

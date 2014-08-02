@@ -28,7 +28,7 @@ class BookController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('allList','ownList','borrowedList','view'),
+				'actions'=>array('allList','ownList','borrowedList','history','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -139,7 +139,12 @@ class BookController extends Controller
             _sendResponse(200, CJSON::encode($books));
         }
         
-	/**
+        public function actionHistory($id) {
+            $history = BookUserBorrow::getBookHistory($id);
+            _sendResponse(200, CJSON::encode($history));
+        }
+
+        /**
 	 * Manages all models.
 	 */
 	public function actionAdmin()

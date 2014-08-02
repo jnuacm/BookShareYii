@@ -28,7 +28,7 @@ class FriendshipController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('list','view','friend','create','delete'),
+				'actions'=>array('list','view','create','delete'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions

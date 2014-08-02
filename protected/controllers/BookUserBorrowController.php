@@ -118,20 +118,6 @@ class BookUserBorrowController extends Controller
 	}
 
 	/**
-	 * Lists all models.
-	 */
-	public function actionList($id)
-	{  
-                $db = Yii::app()->db;
-                $history = $db->createCommand()
-                        ->select('id,borrower,borrow_time,due_time,return_time')
-                        ->from('tbl_book_user_borrow')
-                        ->where('book_id=:id', array(':id'=>$id))
-                        ->queryAll();
-                _sendResponse(200, CJSON::encode($history));
-	}
-
-	/**
 	 * Manages all models.
 	 */
 	public function actionAdmin()

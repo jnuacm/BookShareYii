@@ -51,13 +51,9 @@ class BookUserBorrowController extends Controller
 	 */
 	public function actionView($id)
 	{
-		if(!isset($_GET['id']))
-                    _sendResponse(500, 'Record ID is missing');
-                $record = BookUserBorrow::model()->findByPk($_GET['id']);
-                if(is_null($record))
-                    _sendResponse(404, 'No Record found');
-                else
-                    _sendResponse(200, CJSON::encode($record));
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
 	}
 
 	/**
@@ -66,16 +62,21 @@ class BookUserBorrowController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$record = new Record;
-                if(isset($_POST['borrower']))
+		$model=new BookUserBorrow;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['BookUserBorrow']))
 		{
-                    $record->attributes = array('borrower'=>$_POST['borrower'], 'borrow_time'=>new CDbExpression('NOW()'), 'due_time'=>$_POST['due_time']);
-                    if($record->save()){ 
-                        _sendResponse(200, CJSON::encode($record));
-                    }else{
-                        _sendResponse(403, 'Could not borrow book');
-                    }
+			$model->attributes=$_POST['BookUserBorrow'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
+
+		$this->render('create',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -119,21 +120,15 @@ class BookUserBorrowController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	/**
-	 * Lists all models.
-	 */
-	public function actionList()
-	{
-		$records = BookUserBorrow::model()->findAll();
-                if(empty($records)) 
-                    $this->_sendResponse(200, 'No Records');
-                else
-                {
-                    $rows = array();
-                    foreach($records as $record)
-                    $rows[] = $record->attributes;
-                    $this->_sendResponse(200, CJSON::encode($rows));
-                }
+	public function actionList($id)
+	{  
+                $db = Yii::app()->db;
+                $history = $db->createCommand()
+                        ->select('id,borrower,borrow_time,due_time,return_time')
+                        ->from('tbl_book_user_borrow')
+                        ->where('book_id=:id', array(':id'=>$id))
+                        ->queryAll();
+                _sendResponse(200, CJSON::encode($history));
 	}
 
 	/**

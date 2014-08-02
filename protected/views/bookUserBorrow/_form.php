@@ -43,6 +43,12 @@
 		<?php echo $form->error($model,'due_time'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'return_time'); ?>
+		<?php echo $form->textField($model,'return_time'); ?>
+		<?php echo $form->error($model,'return_time'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

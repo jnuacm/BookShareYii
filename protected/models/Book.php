@@ -129,6 +129,28 @@ class Book extends CActiveRecord
         public static function getUserAllBooks($user){
             return array('own_book'=>self::getUserOwnBooks($user), 'borrowed_book'=>self::getUserBorrowedBooks($user));
         }
+        
+        public static function searchBooks($key) {
+            $sql = "select * from tbl_book where concat(name,isbn,author,publisher) like '%".$key."%'";
+            $rows = Book::model()->findAllBySql($sql);
+            $books = array();
+            foreach($rows as $row) {
+                if($row->attributes['visibility']==0) {
+                    $books[] = $row;
+                }
+                else if($row->attributes['visibility']==1) {
+                    $user = Yii::app()->user->id;
+                    $owner = $row->attributes['owner'];
+                    $sql = "SELECT * FROM tbl_friendship WHERE (user1=:user AND user2=:owner) OR (user1=:owner AND user2=:user)";
+                    $friendship = Friendship::model()->findBySql($sql, array(':user'=>$user,':owner'=>$owner));
+                    if($friendship !== null){
+                        $books[] = $row;
+                    }
+                }
+            }
+            return $books;
+            
+        }
 
 	/**
 	 * Returns the static model of the specified AR class.

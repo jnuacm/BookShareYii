@@ -65,12 +65,16 @@ class UserController extends Controller
 		$user=new User;
                 if(isset($_POST['username']))
 		{
-                    $user->attributes = array('username'=>$_POST['username'], 'password'=>$_POST['password']
-                            ,'email'=>$_POST['email'],'area'=>$_POST['area']);
-                    if($user->save()){ 
-                        _sendResponse(200, CJSON::encode($user));
-                    }else{
-                        _sendResponse(403, 'Could not register user');
+                    if(strcasecmp($_POST['username'], "search")==0) {
+                        _sendResponse(403, 'Username can not be "search" ');
+                    } else {
+                        $user->attributes = array('username'=>$_POST['username'], 'password'=>$_POST['password']
+                                ,'email'=>$_POST['email'],'area'=>$_POST['area']);
+                        if($user->save()){ 
+                            _sendResponse(200, CJSON::encode($user));
+                        }else{
+                            _sendResponse(403, 'Could not register user');
+                        }
                     }
 		}
 	}

@@ -89,6 +89,7 @@ class RequestController extends Controller
             $borrow = new BookUserBorrow;
             $borrow->attributes = array('book_id'=>$bookId, 'borrower'=>$from, 'borrow_time' => new CDbExpression('NOW()'), 'due_time'=>null, 'return_time'=>null);
             $book->holder = Yii::app()->user->id;
+            $book->status = 0;
             if($book->save() && $borrow->save()){
                 _sendResponse(200);
                 $request->status = 2;
@@ -104,6 +105,7 @@ class RequestController extends Controller
             $borrow = BookUserBorrow::model()->findBySql($sql, array(':book_id' => $bookId));
             $borrow->return_time = new CDbExpression('NOW()');
             $book->holder = Yii::app()->user->id;
+            $book->status = 1;
             if($book->save() && $borrow->save()){
                 _sendResponse(200);
                 $request->status = 2;
@@ -116,6 +118,7 @@ class RequestController extends Controller
             $bookId = $desc['bookid'];
             $book = Book::model()->findByPk($bookId);
             $book->owner = $request['to'];
+            $book->status = 0;
             if($book->save()){
                 _sendResponse(200);
                 $request->status = 2;

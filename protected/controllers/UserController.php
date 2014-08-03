@@ -88,13 +88,9 @@ class UserController extends Controller
                 if($user === null)
                     $this->_sendResponse(400, 'No User found');
                 
-                foreach($put_vars as $var=>$value) {
+                foreach($put_vars as $var=>$value)
                     if($user->hasAttribute($var))
                         $user->$var = $value;
-                    else {
-                        $this->_sendResponse(500, 'Parameter Error');
-                    }
-                }
                 if($user->save())
                     $this->_sendResponse(200, CJSON::encode($user));
                 else

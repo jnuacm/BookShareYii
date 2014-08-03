@@ -92,21 +92,19 @@ class BookController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Book']))
-		{
-			$model->attributes=$_POST['Book'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
+                $json = file_get_contents('php://input'); 
+                $put_vars = CJSON::decode($json,true);
+                $book = Book::model()->findByPk($id);
+                if($book === null)
+                    $this->_sendResponse(400, 'No Book found');
+                   
+                foreach($put_vars as $var=>$value)
+                    if($book->hasAttribute($var))
+                        $book->$var = $value;
+                if($book->save())
+                    $this->_sendResponse(200, CJSON::encode($book));
+                else
+                    $this->_sendResponse(500, 'Could not Update Book');
 	}
 
 	/**

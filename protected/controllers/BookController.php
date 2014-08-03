@@ -1,5 +1,5 @@
 <?php
-require_once 'response.php';
+
 class BookController extends Controller
 {
 	/**
@@ -15,7 +15,7 @@ class BookController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-		//	'postOnly + delete', // we only allow deletion via POST request
+			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -62,6 +62,10 @@ class BookController extends Controller
                 }
 	}
 
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
 	public function actionCreate()
 	{
 		$model=new Book;
@@ -69,7 +73,7 @@ class BookController extends Controller
 		{
                     $model->attributes = array('isbn'=>$_POST['isbn'], 'name'=>$_POST['name'],'description'=>$_POST['description']
                             ,'author'=>$_POST['author'],'publisher'=>$_POST['publisher'],'owner'=> Yii::app()->user->id,'holder'=>Yii::app()->user->id
-                            ,'status'=>'GOOD');
+                            ,'status'=>0,'visibility'=>0);
                     if($model->save()){ 
                         $user = Yii::app()->user->id;
                         $own_books = Book::getUserOwnBooks($user);
@@ -144,16 +148,16 @@ class BookController extends Controller
             _sendResponse(200, CJSON::encode($history));
         }
 
-        /**
+	/**
 	 * Manages all models.
 	 */
 	public function actionAdmin()
 	{
 		$model=new Book('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Book'])){
+		if(isset($_GET['Book']))
 			$model->attributes=$_GET['Book'];
-                }
+
 		$this->render('admin',array(
 			'model'=>$model,
 		));

@@ -28,6 +28,8 @@ $this->menu=array(
 		'description',
 		'publisher',
 		'owner',
+		'holder',
 		'status',
+		'visibility',
 	),
 )); ?>

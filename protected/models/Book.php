@@ -11,10 +11,14 @@
  * @property string $description
  * @property string $publisher
  * @property string $owner
- * @property string $status
+ * @property string $holder
+ * @property integer $status
+ * @property integer $visibility
  *
  * The followings are the available model relations:
  * @property User $owner0
+ * @property User $holder0
+ * @property BookUserBorrow[] $bookUserBorrows
  */
 class Book extends CActiveRecord
 {
@@ -34,14 +38,15 @@ class Book extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, isbn, owner, holder, status', 'required'),
+			array('name, isbn, owner, holder', 'required'),
+			array('status, visibility', 'numerical', 'integerOnly'=>true),
 			array('name, author, publisher', 'length', 'max'=>256),
-			array('isbn, status', 'length', 'max'=>32),
+			array('isbn', 'length', 'max'=>32),
 			array('owner, holder', 'length', 'max'=>64),
 			array('description', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, isbn, author, description, publisher, owner, holder, status', 'safe', 'on'=>'search'),
+			array('id, name, isbn, author, description, publisher, owner, holder, status, visibility', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,9 +58,9 @@ class Book extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'owner' => array(self::BELONGS_TO, 'User', 'owner'),
-                        'holder' => array(self::BELONGS_TO, 'User', 'holder'),
-                        'book' => array(self::HAS_ONE, 'BookUserBorrow', 'book_id'),
+			'owner0' => array(self::BELONGS_TO, 'User', 'owner'),
+			'holder0' => array(self::BELONGS_TO, 'User', 'holder'),
+			'bookUserBorrows' => array(self::HAS_MANY, 'BookUserBorrow', 'book_id'),
 		);
 	}
 
@@ -72,8 +77,9 @@ class Book extends CActiveRecord
 			'description' => 'Description',
 			'publisher' => 'Publisher',
 			'owner' => 'Owner',
-                        'holder' => 'Holder',
+			'holder' => 'Holder',
 			'status' => 'Status',
+			'visibility' => 'Visibility',
 		);
 	}
 
@@ -102,14 +108,15 @@ class Book extends CActiveRecord
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('publisher',$this->publisher,true);
 		$criteria->compare('owner',$this->owner,true);
-                $criteria->compare('holder',$this->holder,true);
-		$criteria->compare('status',$this->status,true);
+		$criteria->compare('holder',$this->holder,true);
+		$criteria->compare('status',$this->status);
+		$criteria->compare('visibility',$this->visibility);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-
+        
         public static function getUserOwnBooks($user){
              return Book::model()->findAllByAttributes(array('owner'=>$user));
         }
@@ -122,6 +129,7 @@ class Book extends CActiveRecord
         public static function getUserAllBooks($user){
             return array('own_book'=>self::getUserOwnBooks($user), 'borrowed_book'=>self::getUserBorrowedBooks($user));
         }
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

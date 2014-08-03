@@ -56,9 +56,21 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'holder'); ?>
+		<?php echo $form->textField($model,'holder',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->error($model,'holder'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('size'=>32,'maxlength'=>32)); ?>
+		<?php echo $form->textField($model,'status'); ?>
 		<?php echo $form->error($model,'status'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'visibility'); ?>
+		<?php echo $form->textField($model,'visibility'); ?>
+		<?php echo $form->error($model,'visibility'); ?>
 	</div>
 
 	<div class="row buttons">

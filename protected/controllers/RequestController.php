@@ -111,13 +111,28 @@ class RequestController extends Controller
             }
         }
         
+        private function sellBook($request) {
+            $desc = CJSON::decode($request['description']);
+            $bookId = $desc['bookid'];
+            $book = Book::model()->findByPk($bookId);
+            $book->owner = $request['to'];
+            if($book->save()){
+                _sendResponse(200);
+                $request->status = 2;
+                $request->save();
+            }
+        }
+
+
         private function makeFriend($request) {
             $friendship = new Friendship;
-            $user = Yii::app()->user->id;
-            $friendship->attributes = array('user1'=>$user, 'user2'=>$request['to'], 'time'=>new CDbExpression('NOW()'));
+            $friendship->attributes = array('user1'=>$request['from'], 'user2'=>$request['to'], 'time'=>new CDbExpression('NOW()'));
             if($friendship->save()) {
+                $user = Yii::app()->user->id;
                 $friends = Friendship::getUserFriends($user);
                 _sendResponse(200, CJSON::encode($friends));
+                $request->status = 2;
+                $request->save();
             }
         }
 
@@ -128,7 +143,7 @@ class RequestController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            $motion = array(1=>'lendBook', 2=>'regainBook', 3=>'makeFriend');
+            $motion = array(1=>'lendBook', 2=>'regainBook', 3=>'sellBook', 4=>'makeFriend');
             $request = Request::model()->findByPk($id);
             if($request == null){
                 _sendResponse(404);

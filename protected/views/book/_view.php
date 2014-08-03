@@ -34,8 +34,16 @@
 	<br />
 
 	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('holder')); ?>:</b>
+	<?php echo CHtml::encode($data->holder); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
 	<?php echo CHtml::encode($data->status); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('visibility')); ?>:</b>
+	<?php echo CHtml::encode($data->visibility); ?>
 	<br />
 
 	*/ ?>

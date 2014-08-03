@@ -47,8 +47,18 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'holder'); ?>
+		<?php echo $form->textField($model,'holder',array('size'=>60,'maxlength'=>64)); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('size'=>32,'maxlength'=>32)); ?>
+		<?php echo $form->textField($model,'status'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'visibility'); ?>
+		<?php echo $form->textField($model,'visibility'); ?>
 	</div>
 
 	<div class="row buttons">

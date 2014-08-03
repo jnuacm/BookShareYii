@@ -2,7 +2,7 @@
 require_once 'response.php';
 class RequestController extends Controller
 {
-	/**
+        /**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
@@ -82,23 +82,23 @@ class RequestController extends Controller
 	}
 
         private function lendBook($request){
-            $from = $request['from'];
-            $desc = CJSON::decode($request['description']);
+            $from = $request->from;
+            $desc = CJSON::decode($request->description);
+            echo $request->description;
             $bookId = $desc['bookid'];
             $book = Book::model()->findByPk($bookId);
             $borrow = new BookUserBorrow;
             $borrow->attributes = array('book_id'=>$bookId, 'borrower'=>$from, 'borrow_time' => new CDbExpression('NOW()'), 'due_time'=>null, 'return_time'=>null);
-            $book->holder = Yii::app()->user->id;
+            $book->holder = $from;
             $book->status = 0;
-            if($book->save() && $borrow->save()){
-                _sendResponse(200);
-                $request->status = 2;
-                $request->save();
+            $request->status = 1;
+            if($book->save() && $borrow->save() && $request->save()){
+                _sendResponse(200, 'The request has been done.');
             }
         }
         
         private function regainBook($request){
-            $desc = CJSON::decode($request['description']);
+            $desc = CJSON::decode($request->description);
             $bookId = $desc['bookid'];
             $book = Book::model()->findByPk($bookId);
             $sql = 'SELECT MAX(id), book_id, borrower, borrow_time, due_time, return_time FROM tbl_book_user_borrow WHERE book_id=:book_id';
@@ -106,36 +106,33 @@ class RequestController extends Controller
             $borrow->return_time = new CDbExpression('NOW()');
             $book->holder = Yii::app()->user->id;
             $book->status = 1;
-            if($book->save() && $borrow->save()){
+            $request->status = 1;
+            if($book->save() && $borrow->save() && $request->save()){
                 _sendResponse(200);
-                $request->status = 2;
-                $request->save();
             }
         }
         
         private function sellBook($request) {
-            $desc = CJSON::decode($request['description']);
+            $desc = CJSON::decode($request->description);
             $bookId = $desc['bookid'];
             $book = Book::model()->findByPk($bookId);
-            $book->owner = $request['to'];
+            $book->owner = $request->to;
             $book->status = 0;
-            if($book->save()){
+            $request->status = 1;
+            if($book->save() && $request->save()){
                 _sendResponse(200);
-                $request->status = 2;
-                $request->save();
             }
         }
 
 
         private function makeFriend($request) {
             $friendship = new Friendship;
-            $friendship->attributes = array('user1'=>$request['from'], 'user2'=>$request['to'], 'time'=>new CDbExpression('NOW()'));
-            if($friendship->save()) {
-                $user = Yii::app()->user->id;
-                $friends = Friendship::getUserFriends($user);
+            $friendship->attributes = array('user1'=>$request->from, 'user2'=>$request->to, 'time'=>new CDbExpression('NOW()'));
+            $user = Yii::app()->user->id;
+            $friends = Friendship::getUserFriends($user);
+            $request->status = 1;
+            if($friendship->save() && $request->save()) {
                 _sendResponse(200, CJSON::encode($friends));
-                $request->status = 2;
-                $request->save();
             }
         }
 
@@ -155,7 +152,7 @@ class RequestController extends Controller
             parse_str(file_get_contents('php://input'), $data);
             if(isset($data['status'])){
                 if($data['status'] == '1'){
-                    $this->$motion[$request->getAttribute('type')]($request);
+                    $this->$motion[$request->type]($request);
                 }else if($data['status'] == '2' || $data['status'] == '3'){
                     $this->turnDownOrAcknowledge($request, $data['status']);
                 }

@@ -5179,3 +5179,43 @@ Stack trace:
 #23 {main}
 REQUEST_URI=/bookshareyii/index.php/api/friend/bb
 ---
+2014/08/03 10:32:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "all/create".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('all/create')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/all/
+---
+2014/08/03 10:33:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "all/create".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('all/create')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/all/
+---
+2014/08/03 10:33:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "all/create".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('all/create')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/all/
+---
+2014/08/03 10:33:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "all/create".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('all/create')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/all/
+---
+2014/08/03 10:33:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "all/create".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('all/create')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/all/
+---

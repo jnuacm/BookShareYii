@@ -7,7 +7,10 @@ class RequestController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-
+	
+	const RequestRaised = 0, RequestAccepted = 1, RequestRejected = 2,
+		RequestDone = 3, RequestCancelled = 4;
+	 
 	/**
 	 * @return array action filters
 	 */
@@ -72,7 +75,7 @@ class RequestController extends Controller
 		if(isset($_POST['to']))
 		{
                     $request->attributes = array('time'=>new CDbExpression('NOW()'),'from'=>Yii::app()->user->id,'to'=>$_POST['to']
-                            ,'type'=>$_POST['type'],'description'=>$_POST['description'],'status'=>0);
+                            ,'type'=>$_POST['type'],'description'=>$_POST['description'],'status'=>self::RequestRaised);
                     if($request->save()){ 
                         _sendResponse(200, CJSON::encode($request));
                     }else{
@@ -90,8 +93,8 @@ class RequestController extends Controller
             $borrow = new BookUserBorrow;
             $borrow->attributes = array('book_id'=>$bookId, 'borrower'=>$from, 'borrow_time' => new CDbExpression('NOW()'), 'due_time'=>null, 'return_time'=>null);
             $book->holder = $from;
-            $book->status = 0;
-            $request->status = 1;
+            $book->status = Book::Unavailable;
+            $request->status = self::RequestDone;
             if($book->save() && $borrow->save() && $request->save()){
                 _sendResponse(200, 'The request has been done.');
             }
@@ -104,9 +107,9 @@ class RequestController extends Controller
             $sql = 'SELECT MAX(id), book_id, borrower, borrow_time, due_time, return_time FROM tbl_book_user_borrow WHERE book_id=:book_id';
             $borrow = BookUserBorrow::model()->findBySql($sql, array(':book_id' => $bookId));
             $borrow->return_time = new CDbExpression('NOW()');
-            $book->holder = Yii::app()->user->id;
-            $book->status = 1;
-            $request->status = 1;
+            $book->holder = $book->owner;
+            $book->status = Book::Borrowable;
+            $request->status = self::RequestDone;
             if($book->save() && $borrow->save() && $request->save()){
                 _sendResponse(200);
             }
@@ -117,8 +120,8 @@ class RequestController extends Controller
             $bookId = $desc['bookid'];
             $book = Book::model()->findByPk($bookId);
             $book->owner = $request->to;
-            $book->status = 0;
-            $request->status = 1;
+            $book->status = Book::Borrowable;
+            $request->status = self::RequestDone;
             if($book->save() && $request->save()){
                 _sendResponse(200);
             }
@@ -130,7 +133,7 @@ class RequestController extends Controller
             $friendship->attributes = array('user1'=>$request->from, 'user2'=>$request->to, 'time'=>new CDbExpression('NOW()'));
             $user = Yii::app()->user->id;
             $friends = Friendship::getUserFriends($user);
-            $request->status = 1;
+            $request->status = self::RequestDone;
             if($friendship->save() && $request->save()) {
                 _sendResponse(200, CJSON::encode($friends));
             }
@@ -151,9 +154,10 @@ class RequestController extends Controller
             $data = array();
             parse_str(file_get_contents('php://input'), $data);
             if(isset($data['status'])){
-                if($data['status'] == '1'){
+                if($data['status'] == self::RequestDone){
                     $this->$motion[$request->type]($request);
-                }else if($data['status'] == '2' || $data['status'] == '3'){
+                }else if($data['status'] == self::RequestRejected || $data['status'] == self::RequestAccepted
+                		 || $data['status'] == self::RequestCancelled){
                     $this->turnDownOrAcknowledge($request, $data['status']);
                 }
             }

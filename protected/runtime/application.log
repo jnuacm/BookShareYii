@@ -5178,3 +5178,97 @@ Stack trace:
 #22 D:\Program Files\xampp\htdocs\BookShareYii\index.php(13): CApplication->run()
 #23 {main}
 REQUEST_URI=/bookshareyii/index.php/api/friend/bb
+2014/08/28 16:42:54 [error] [php] PDO::exec(): MySQL server has gone away (D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbConnection.php:452)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbConnection.php(308): CDbConnection->setActive()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(450): CWebApplication->getComponent()
+#4 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(634): CWebApplication->getDb()
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(1428): User->getDbConnection()
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(1484): User->getTableAlias()
+#7 D:\Program Files\xampp\htdocs\bookshareyii\protected\components\UserIdentity.php(16): User->findByPk()
+#8 D:\Program Files\xampp\htdocs\bookshareyii\protected\models\LoginForm.php(49): UserIdentity->authenticate()
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate()
+#10 D:\Program Files\xampp\htdocs\bookshareyii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#11 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CModel.php(159): CInlineValidator->validate()
+#12 D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\SiteController.php(83): LoginForm->validate()
+#13 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#14 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#15 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(286): SiteController->runAction()
+#16 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#17 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): SiteController->run()
+#18 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/login
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\components\UserIdentity.php (16)
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\models\LoginForm.php (49)
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\SiteController.php (83)
+2014/08/28 16:43:06 [error] [php] PDO::exec(): MySQL server has gone away (D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbConnection.php:452)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbConnection.php(308): CDbConnection->setActive()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(450): CWebApplication->getComponent()
+#4 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(634): CWebApplication->getDb()
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(1428): User->getDbConnection()
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(1484): User->getTableAlias()
+#7 D:\Program Files\xampp\htdocs\bookshareyii\protected\components\UserIdentity.php(16): User->findByPk()
+#8 D:\Program Files\xampp\htdocs\bookshareyii\protected\models\LoginForm.php(49): UserIdentity->authenticate()
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate()
+#10 D:\Program Files\xampp\htdocs\bookshareyii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#11 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CModel.php(159): CInlineValidator->validate()
+#12 D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\SiteController.php(83): LoginForm->validate()
+#13 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#14 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#15 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(286): SiteController->runAction()
+#16 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#17 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): SiteController->run()
+#18 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/login
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\components\UserIdentity.php (16)
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\models\LoginForm.php (49)
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\SiteController.php (83)
+2014/08/29 09:58:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/gg/all".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/gg/all')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/all
+---
+2014/08/29 09:59:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/gg/all".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/gg/all')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/all
+---
+2014/08/29 09:59:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/user/gg/all".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/gg/all')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/user/gg/all
+---
+2014/08/29 10:00:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/book/gg/lended".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/book/gg/len...')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/gg/lended
+---
+2014/08/29 10:00:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/book/gg/owned".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/book/gg/own...')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/gg/owned
+---

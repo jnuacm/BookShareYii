@@ -22,6 +22,10 @@
  */
 class Book extends CActiveRecord
 {
+	
+	const VisibleToAll = 0, VisibleToFriends = 1;
+	const Unavailable = 0, Borrowable = 1, Buyable = 2;//位压缩，3即为可借可买
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -135,10 +139,10 @@ class Book extends CActiveRecord
             $rows = Book::model()->findAllBySql($sql);
             $books = array();
             foreach($rows as $row) {
-                if($row->attributes['visibility']==0) {
+                if($row->attributes['visibility']==self::VisibleToAll) {
                     $books[] = $row;
                 }
-                else if($row->attributes['visibility']==1) {
+                else if($row->attributes['visibility']==self::VisibleToFriends) {
                     $user = Yii::app()->user->id;
                     $owner = $row->attributes['owner'];
                     $sql = "SELECT * FROM tbl_friendship WHERE (user1=:user AND user2=:owner) OR (user1=:owner AND user2=:user)";

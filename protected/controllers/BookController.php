@@ -3,12 +3,6 @@ require_once 'response.php';
 class BookController extends Controller
 {
 	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	public $layout='//layouts/column2';
-
-	/**
 	 * @return array action filters
 	 */
 	public function filters()
@@ -52,14 +46,14 @@ class BookController extends Controller
 	public function actionView($id)
 	{
 		if(!isset($id)){
-                    _sendResponse(500, 'Book ID is missing');
-                }
-                $book = Book::model()->findByPk($id);
-                if(is_null($book)){
-                    _sendResponse(404, 'No Book found');
-                }else{
-                    _sendResponse(200, CJSON::encode($book));
-                }
+            _sendResponse(404, 'No Book found');
+        }
+        $book = Book::model()->findByPk($id);
+        if(is_null($book)){
+            _sendResponse(404, 'No Book found');
+        }else{
+            _sendResponse(200, CJSON::encode($book));
+        }
 	}
 
 	/**
@@ -71,17 +65,17 @@ class BookController extends Controller
 		$model=new Book;
 		if(isset($_POST['isbn']))
 		{
-                    $model->attributes = array('isbn'=>$_POST['isbn'], 'name'=>$_POST['name'],'description'=>$_POST['description']
-                            ,'author'=>$_POST['author'],'publisher'=>$_POST['publisher'],'owner'=> Yii::app()->user->id,'holder'=>Yii::app()->user->id
-                            ,'status'=>Book::Borrowable,'visibility'=>Book::VisibleToAll);
-                    if($model->save()){ 
-                        $user = Yii::app()->user->id;
-                        $own_books = Book::getUserOwnBooks($user);
-                        $borrowed_books = Book::getUserBorrowedBooks($user);
-                        _sendResponse(200, CJSON::encode(array('own_book'=>$own_books, 'borrowed_book'=>$borrowed_books)));
-                    }else{
-                        _sendResponse(404, 'Could not Create Book');
-                    }
+            $model->attributes = array('isbn'=>$_POST['isbn'], 'name'=>$_POST['name'],'description'=>$_POST['description']
+                 ,'author'=>$_POST['author'],'publisher'=>$_POST['publisher'],'owner'=> Yii::app()->user->id,'holder'=>Yii::app()->user->id
+                ,'status'=>Book::Borrowable,'visibility'=>Book::VisibleToAll);
+            if($model->save()){ 
+                $user = Yii::app()->user->id;
+                $own_books = Book::getUserOwnBooks($user);
+                $borrowed_books = Book::getUserBorrowedBooks($user);
+                _sendResponse(200, CJSON::encode(array('own_book'=>$own_books, 'borrowed_book'=>$borrowed_books)));
+            }else{
+             	_sendResponse(404, 'Could not Create Book');
+            }
 		}
 	}
 
@@ -96,7 +90,7 @@ class BookController extends Controller
                 $put_vars = CJSON::decode($json,true);
                 $book = Book::model()->findByPk($id);
                 if($book === null)
-                    $this->_sendResponse(400, 'No Book found');
+                    $this->_sendResponse(404, 'No Book found');
                    
                 foreach($put_vars as $var=>$value)
                     if($book->hasAttribute($var))
@@ -109,16 +103,15 @@ class BookController extends Controller
 
 	/**
 	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-                $user = Yii::app()->user->id;
-                $own_books = Book::getUserOwnBooks($user);
-                $borrowed_books = Book::getUserBorrowedBooks($user);
-                _sendResponse(200, CJSON::encode(array('own_book'=>$own_books, 'borrowed_book'=>$borrowed_books)));
+        $user = Yii::app()->user->id;
+        $own_books = Book::getUserOwnBooks($user);
+        $borrowed_books = Book::getUserBorrowedBooks($user);
+        _sendResponse(200, CJSON::encode(array('own_book'=>$own_books, 'borrowed_book'=>$borrowed_books)));
 	}
 
 	/**
@@ -131,40 +124,25 @@ class BookController extends Controller
             _sendResponse(200, CJSON::encode(array('own_book'=>$own_books, 'borrowed_book'=>$borrowed_books)));
 	}
 
-        public function actionOwnList($user){
-            $books = Book::getUserOwnBooks($user);
-            _sendResponse(200, CJSON::encode($books));
-        }
+    public function actionOwnList($user){
+        $books = Book::getUserOwnBooks($user);
+        _sendResponse(200, CJSON::encode($books));
+    }
         
-        public function actionBorrowedList($user){
-            $books = Book::getUserBorrowedBooks($user);
-            _sendResponse(200, CJSON::encode($books));
-        }
+    public function actionBorrowedList($user){
+        $books = Book::getUserBorrowedBooks($user);
+        _sendResponse(200, CJSON::encode($books));
+    }
         
-        public function actionHistory($id) {
-            $history = BookUserBorrow::getBookHistory($id);
-            _sendResponse(200, CJSON::encode($history));
-        }
+    public function actionHistory($id) {
+        $history = BookUserBorrow::getBookHistory($id);
+        _sendResponse(200, CJSON::encode($history));
+    }
         
-        public function actionSearch($key) {
-            $books = Book::searchBooks($key);
-            _sendResponse(200, CJSON::encode($books));
-        }
-
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new Book('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Book']))
-			$model->attributes=$_GET['Book'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
+    public function actionSearch($key) {
+        $books = Book::searchBooks($key);
+        _sendResponse(200, CJSON::encode($books));
+    }
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
@@ -179,18 +157,5 @@ class BookController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param Book $model the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='book-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
 	}
 }

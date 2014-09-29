@@ -59,17 +59,17 @@ class FriendshipController extends Controller
 	public function actionCreate()
 	{
 		$model=new Friendship;
-                if(isset($_POST['user2']))
+        if(isset($_POST['user2']))
 		{
-                    $model->attributes = array('user1'=>Yii::app()->user->id, 'user2'=>$_POST['user2']
-                            ,'time'=>new CDbExpression('NOW()'));
-                    if($model->save()){ 
-                        $user = Yii::app()->user->id;
-                        $friends = Friendship::getUserFriends($user);
-                        _sendResponse(200, CJSON::encode($friends));
-                    }else{
-                        _sendResponse(403, 'Could not create relation');
-                    }
+            $model->attributes = array('user1'=>Yii::app()->user->id, 'user2'=>$_POST['user2']
+                ,'time'=>new CDbExpression('NOW()'));
+            if($model->save()){ 
+                $user = Yii::app()->user->id;
+                $friends = Friendship::getUserFriends($user);
+                _sendResponse(200, CJSON::encode($friends));
+            }else{
+                _sendResponse(403, 'Could not create relation');
+            }
 		}
 	}
 

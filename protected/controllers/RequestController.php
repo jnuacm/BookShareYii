@@ -7,7 +7,6 @@ class RequestController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
 	
 	const RequestRaised = 0, RequestAccepted = 1, RequestRejected = 2,
 		RequestDone = 3, RequestCancelled = 4;
@@ -56,14 +55,14 @@ class RequestController extends Controller
 	public function actionView($id)
 	{
 		if(!isset($id)){
-                    _sendResponse(500, 'Request ID is missing');
-                }
-                $request = Request::model()->findByPk($id);
-                if(is_null($request)){
-                    _sendResponse(404, 'No Request found');
-                }else{
-                    _sendResponse(200, CJSON::encode($request));
-                }
+             _sendResponse(404, 'Request ID is missing');
+        }
+        $request = Request::model()->findByPk($id);
+        if(is_null($request)){
+            _sendResponse(404, 'No Request found');
+        }else{
+            _sendResponse(200, CJSON::encode($request));
+        }
 	}
 
 	/**
@@ -89,68 +88,68 @@ class RequestController extends Controller
 		}
 	}
 
-        private function lendBook($request){
-            $from = $request->from;
-            $desc = CJSON::decode($request->description);
-            echo $request->description;
-            $bookId = $desc['bookid'];
-            $book = Book::model()->findByPk($bookId);
-            $borrow = new BookUserBorrow;
-            $borrow->attributes = array('book_id'=>$bookId, 'borrower'=>$from, 'borrow_time' => new CDbExpression('NOW()'), 'due_time'=>null, 'return_time'=>null);
-            $book->holder = $from;
-            $book->status = Book::Unavailable;
-            $request->status = self::RequestDone;
-            if($book->save() && $borrow->save() && $request->save()){
-                return true;
-            }else{
-            	return false;
-            }
+    private function lendBook($request){
+        $from = $request->from;
+        $desc = CJSON::decode($request->description);
+        echo $request->description;
+        $bookId = $desc['bookid'];
+        $book = Book::model()->findByPk($bookId);
+        $borrow = new BookUserBorrow;
+        $borrow->attributes = array('book_id'=>$bookId, 'borrower'=>$from, 'borrow_time' => new CDbExpression('NOW()'), 'due_time'=>null, 'return_time'=>null);
+        $book->holder = $from;
+        $book->status = Book::Unavailable;
+        $request->status = self::RequestDone;
+        if($book->save() && $borrow->save() && $request->save()){
+            return true;
+        }else{
+        	return false;
         }
+    }
         
-        private function regainBook($request){
-            $desc = CJSON::decode($request->description);
-            $bookId = $desc['bookid'];
-            $book = Book::model()->findByPk($bookId);
-            $sql = 'SELECT MAX(id), book_id, borrower, borrow_time, due_time, return_time FROM tbl_book_user_borrow WHERE book_id=:book_id';
-            $borrow = BookUserBorrow::model()->findBySql($sql, array(':book_id' => $bookId));
-            $borrow->return_time = new CDbExpression('NOW()');
-            $book->holder = $book->owner;
-            $book->status = Book::Borrowable;
-            $request->status = self::RequestDone;
-            if($book->save() && $borrow->save() && $request->save()){
-                return true;
-            }else{
-            	return false;
-            }
+    private function regainBook($request){
+        $desc = CJSON::decode($request->description);
+        $bookId = $desc['bookid'];
+        $book = Book::model()->findByPk($bookId);
+        $sql = 'SELECT MAX(id), book_id, borrower, borrow_time, due_time, return_time FROM tbl_book_user_borrow WHERE book_id=:book_id';
+        $borrow = BookUserBorrow::model()->findBySql($sql, array(':book_id' => $bookId));
+        $borrow->return_time = new CDbExpression('NOW()');
+        $book->holder = $book->owner;
+        $book->status = Book::Borrowable;
+        $request->status = self::RequestDone;
+        if($book->save() && $borrow->save() && $request->save()){
+            return true;
+        }else{
+        	return false;
         }
+    }
         
-        private function sellBook($request) {
-            $desc = CJSON::decode($request->description);
-            $bookId = $desc['bookid'];
-            $book = Book::model()->findByPk($bookId);
-            $book->owner = $request->to;
-            $book->status = Book::Borrowable;
-            $request->status = self::RequestDone;
-            if($book->save() && $request->save()){
-                return true;
-            }else{
-            	false;
-            }
+    private function sellBook($request) {
+        $desc = CJSON::decode($request->description);
+        $bookId = $desc['bookid'];
+        $book = Book::model()->findByPk($bookId);
+        $book->owner = $request->to;
+        $book->status = Book::Borrowable;
+        $request->status = self::RequestDone;
+        if($book->save() && $request->save()){
+            return true;
+        }else{
+        	false;
         }
+    }
 
 
-        private function makeFriend($request) {
-            $friendship = new Friendship;
-            $friendship->attributes = array('user1'=>$request->from, 'user2'=>$request->to, 'time'=>new CDbExpression('NOW()'));
-            $user = Yii::app()->user->id;
-            $friends = Friendship::getUserFriends($user);
-            $request->status = self::RequestDone;
-            if($friendship->save() && $request->save()) {
-                return true;
-            }else{
-            	return false;
-            }
+    private function makeFriend($request) {
+        $friendship = new Friendship;
+        $friendship->attributes = array('user1'=>$request->from, 'user2'=>$request->to, 'time'=>new CDbExpression('NOW()'));
+        $user = Yii::app()->user->id;
+        $friends = Friendship::getUserFriends($user);
+        $request->status = self::RequestDone;
+        if($friendship->save() && $request->save()) {
+            return true;
+        }else{
+        	return false;
         }
+    }
 
         /**
 	 * Updates a particular model.

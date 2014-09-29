@@ -126,7 +126,6 @@ class Book extends CActiveRecord
         }
         
         public static function getUserBorrowedBooks($user){
-             //return Book::model()->findAllByAttributes(array('holder'=>$user));
             return Book::model()->findAllBySql("select * from tbl_book where holder=:holder and owner<>holder", array(':holder'=>$user));
         }
         
@@ -139,10 +138,10 @@ class Book extends CActiveRecord
             $rows = Book::model()->findAllBySql($sql);
             $books = array();
             foreach($rows as $row) {
-                if($row->attributes['visibility']==self::VisibleToAll) {
+                if($row->attributes['visibility']===self::VisibleToAll) {
                     $books[] = $row;
                 }
-                else if($row->attributes['visibility']==self::VisibleToFriends) {
+                else if($row->attributes['visibility']===self::VisibleToFriends) {
                     $user = Yii::app()->user->id;
                     $owner = $row->attributes['owner'];
                     $sql = "SELECT * FROM tbl_friendship WHERE (user1=:user AND user2=:owner) OR (user1=:owner AND user2=:user)";
@@ -153,7 +152,6 @@ class Book extends CActiveRecord
                 }
             }
             return $books;
-            
         }
 
 	/**

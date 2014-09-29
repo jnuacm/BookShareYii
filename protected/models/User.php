@@ -43,7 +43,7 @@ class User extends CActiveRecord
 			array('email, password, area', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('username, email, password, area, is_group', 'safe', 'on'=>'search'),
+			array('username, email, area, is_group', 'safe', 'on'=>'search'),
 		);
 	}
 

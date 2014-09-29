@@ -42,6 +42,11 @@ return array(
                         'api/login'=>'site/login',
                         'api/register'=>'site/register',
                         // REST patterns
+						array('avatar/create', 'pattern'=>'api/avatar/<user:\w+>', 'verb'=>'POST'),
+						array('avatar/view', 'pattern'=>'api/avatar/<user:\w+>', 'verb'=>'GET'),
+						array('avatar/update', 'pattern'=>'api/avatar/<user:\w+>', 'verb'=>'PUT'),
+						array('avatar/delete', 'pattern'=>'api/avatar/<user:\w+>', 'verb'=>'DELETE'),
+		
                         array('book/<suffix>list', 'pattern'=>'api/book/<user:\w+>/<suffix:((all)|(own)|(borrowed))>', 'verb'=>'GET'),
                         array('book/history', 'pattern'=>'api/book/<id:\w+>/history', 'verb'=>'GET'),
                         array('book/search', 'pattern'=>'api/book/search/<key:\w+>', 'verb'=>'GET'),
@@ -55,8 +60,7 @@ return array(
                         array('<model>/view', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'GET'),
                         array('<model>/update', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'PUT'),
                         array('<model>/delete', 'pattern'=>'api/<model:\w+>/<id:\w+>', 'verb'=>'DELETE'),
-                        array('<model>/create', 'pattern'=>'api/<model:\w+>', 'verb'=>'POST'),
-
+                        array('<model>/create', 'pattern'=>'api/<model:\w+>', 'verb'=>'POST'),                        
                     ),
 		),
 		

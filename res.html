@@ -5,13 +5,21 @@
 </head>
 <body>
     <form action="http://127.0.0.1/bookshareyii/index.php/api/login" method="post">
-	<input name="username" value="aa">
-        <input name="password" value="1234" type="password">
+	<input name="username" value="gg">
+    <input name="password" value="1234" type="password">
+    <input name="userid" value="634098767705857691">
 	<input type="submit">
 </form><br/>
     <form action="http://127.0.0.1/bookshareyii/index.php/api/friend" method="post">
         <input name="user2" value="cc">
 	<input type="submit">
-    </form>
+</form><br/>
+<form action="index.php/api/avatar/gg" method="post"
+enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input type="file" name="file" id="file"><br>
+<input type="submit" name="submit" value="Submit">
+</form>
+    
 </body>
 </html>

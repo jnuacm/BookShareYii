@@ -1,5 +1,6 @@
 <?php
 require_once 'response.php';
+require_once 'PushMessage.php';
 class RequestController extends Controller
 {
         /**
@@ -74,13 +75,17 @@ class RequestController extends Controller
 		$request=new Request;
 		if(isset($_POST['to']))
 		{
-                    $request->attributes = array('time'=>new CDbExpression('NOW()'),'from'=>Yii::app()->user->id,'to'=>$_POST['to']
-                            ,'type'=>$_POST['type'],'description'=>$_POST['description'],'status'=>self::RequestRaised);
-                    if($request->save()){ 
-                        _sendResponse(200, CJSON::encode($request));
-                    }else{
-                        _sendResponse(404, 'Could not Create Request');
-                    }
+            $request->attributes = array('time'=>new CDbExpression('NOW()'),'from'=>Yii::app()->user->id,'to'=>$_POST['to']
+                    ,'type'=>$_POST['type'],'description'=>$_POST['description'],'status'=>self::RequestRaised);
+            if($request->save()){
+                $uid = Userid::model()->findByAttributes(array('username'=>$_POST['to']));
+            	if($uid !== null){
+            		pushMessage_android($uid->userid, array('subject'=>'request', 'id'=>$request->id));
+            	}
+            	_sendResponse(200, CJSON::encode($request));
+            }else{
+                _sendResponse(404, 'Could not Create Request');
+          	}
 		}
 	}
 
@@ -96,7 +101,9 @@ class RequestController extends Controller
             $book->status = Book::Unavailable;
             $request->status = self::RequestDone;
             if($book->save() && $borrow->save() && $request->save()){
-                _sendResponse(200, 'The request has been done.');
+                return true;
+            }else{
+            	return false;
             }
         }
         
@@ -111,7 +118,9 @@ class RequestController extends Controller
             $book->status = Book::Borrowable;
             $request->status = self::RequestDone;
             if($book->save() && $borrow->save() && $request->save()){
-                _sendResponse(200);
+                return true;
+            }else{
+            	return false;
             }
         }
         
@@ -123,7 +132,9 @@ class RequestController extends Controller
             $book->status = Book::Borrowable;
             $request->status = self::RequestDone;
             if($book->save() && $request->save()){
-                _sendResponse(200);
+                return true;
+            }else{
+            	false;
             }
         }
 
@@ -135,7 +146,9 @@ class RequestController extends Controller
             $friends = Friendship::getUserFriends($user);
             $request->status = self::RequestDone;
             if($friendship->save() && $request->save()) {
-                _sendResponse(200, CJSON::encode($friends));
+                return true;
+            }else{
+            	return false;
             }
         }
 
@@ -152,13 +165,22 @@ class RequestController extends Controller
                 _sendResponse(404);
             }
             $data = array();
+            $flag = false;
             parse_str(file_get_contents('php://input'), $data);
             if(isset($data['status'])){
                 if($data['status'] == self::RequestDone){
-                    $this->$motion[$request->type]($request);
+                    $flag = $this->$motion[$request->type]($request);
                 }else if($data['status'] == self::RequestRejected || $data['status'] == self::RequestAccepted
                 		 || $data['status'] == self::RequestCancelled){
-                    $this->turnDownOrAcknowledge($request, $data['status']);
+                    $flag = $this->turnDownOrAcknowledge($request, $data['status']);
+                }
+                if($flag){
+	                $target = $request->from === Yii::app()->user->id? $request->to : $request->from;
+	                $uid = Userid::model()->findByAttributes(array('username'=>$target));
+	                if($uid !== null){
+	                	pushMessage_android($uid->userid, array('subject'=>'request', 'id'=>$id));
+	                }
+	                _sendResponse(200, CJSON::encode($friends));
                 }
             }
 	}

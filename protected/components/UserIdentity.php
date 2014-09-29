@@ -24,6 +24,22 @@ class UserIdentity extends CUserIdentity
             } else {
                 $this->_id = $user->username;
                 $this->errorCode = self::ERROR_NONE;
+                $u = Userid::model()->findByAttributes(array('username' => $user->username));
+                $id = Userid::model()->findByAttributes(array('userid' => $_POST['userid']));
+                if($u !== $id || $u === null){
+	                if($u === null && $id === null){
+	               		$uid = new Userid;
+	               		$uid->attributes = array('username' => $user->username, 'userid' => $_POST['userid']);
+	               		$uid->save();
+	                }else if($u === null){
+	                	$id->username = $user->username;
+	                	$id->save();
+	                }else{
+	                	$id->delete();
+	                	$u->userid = $_POST['userid'];
+	                	$u->save();
+	                }
+                }
             }
         }
         return !$this->errorCode;

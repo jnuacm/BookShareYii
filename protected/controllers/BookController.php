@@ -67,7 +67,8 @@ class BookController extends Controller
 		{
             $model->attributes = array('isbn'=>$_POST['isbn'], 'name'=>$_POST['name'],'description'=>$_POST['description']
                  ,'author'=>$_POST['author'],'publisher'=>$_POST['publisher'],'owner'=> Yii::app()->user->id,'holder'=>Yii::app()->user->id
-                ,'status'=>Book::Borrowable,'visibility'=>Book::VisibleToAll);
+                ,'status'=>Book::Borrowable,'visibility'=>Book::VisibleToAll, 'large_img'=>$_POST['large_img'], 
+            		'medium_img'=>$_POST['medium_img'], 'small_img'=>$_POST['small_img']);
             if($model->save()){ 
                 $user = Yii::app()->user->id;
                 $own_books = Book::getUserOwnBooks($user);

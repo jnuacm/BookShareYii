@@ -9,6 +9,7 @@
  * @property string $password
  * @property string $area
  * @property integer $is_group
+ * @property integer $avatar
  *
  * The followings are the available model relations:
  * @property Book[] $books
@@ -37,8 +38,8 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, email, password, is_group', 'required'),
-			array('is_group', 'numerical', 'integerOnly'=>true),
+			array('username, email, password, is_group, avatar', 'required'),
+			array('is_group, avatar', 'numerical', 'integerOnly'=>true),
 			array('username', 'length', 'max'=>64),
 			array('email, password, area', 'length', 'max'=>256),
 			// The following rule is used by search().

@@ -17,6 +17,9 @@ class AvatarController extends Controller
 		    } else {
 		      move_uploaded_file($_FILES["file"]["tmp_name"],
 		      "upload/avatar".$_GET['user']. '.' . $extension);
+		      $user = User::model()->findByAttributes(array('username'=>$_GET['user']));
+		      $user->avatar = $user->avatar + 1;
+		      $user->save();
 		      _sendResponse(200);
 		    }
 		  }

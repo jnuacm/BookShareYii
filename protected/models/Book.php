@@ -14,6 +14,9 @@
  * @property string $holder
  * @property integer $status
  * @property integer $visibility
+ * @property string $large_img
+ * @property string $medium_img
+ * @property string $small_img
  *
  * The followings are the available model relations:
  * @property User $owner0
@@ -44,7 +47,7 @@ class Book extends CActiveRecord
 		return array(
 			array('name, isbn, owner, holder', 'required'),
 			array('status, visibility', 'numerical', 'integerOnly'=>true),
-			array('name, author, publisher', 'length', 'max'=>256),
+			array('name, author, publisher, large_img, medium_img, small_img', 'length', 'max'=>256),
 			array('isbn', 'length', 'max'=>32),
 			array('owner, holder', 'length', 'max'=>64),
 			array('description', 'safe'),
@@ -84,6 +87,9 @@ class Book extends CActiveRecord
 			'holder' => 'Holder',
 			'status' => 'Status',
 			'visibility' => 'Visibility',
+			'large_img' => 'Large Image',
+			'medium_img' => 'Medium Image',
+			'small_img' => 'Small Image',
 		);
 	}
 
@@ -115,18 +121,31 @@ class Book extends CActiveRecord
 		$criteria->compare('holder',$this->holder,true);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('visibility',$this->visibility);
-
+		$criteria->compare('large_img',$this->large_img);
+		$criteria->compare('medium_img',$this->medium_img);
+		$criteria->compare('small_img',$this->small_img);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-        
+	
         public static function getUserOwnBooks($user){
-             return Book::model()->findAllByAttributes(array('owner'=>$user));
+        	$criteria=new CDbCriteria;
+			$criteria->select='id, name, isbn, author, publisher, owner, holder, status, 
+        			visibility, small_img'; // only select the 'title' column
+			$criteria->condition='owner=:owner';
+			$criteria->params=array(':owner'=>$user);
+			return Book::model()->findAll($criteria);
         }
         
         public static function getUserBorrowedBooks($user){
-            return Book::model()->findAllBySql("select * from tbl_book where holder=:holder and owner<>holder", array(':holder'=>$user));
+        	$criteria=new CDbCriteria;
+        	$criteria->select='id, name, isbn, author, publisher, owner, holder, status,
+        			visibility, small_img'; // only select the 'title' column
+        	$criteria->condition='holder=:holder and owner<>holder';
+        	$criteria->params=array(':holder'=>$user);
+           	return Book::model()->findAll($criteria);
         }
         
         public static function getUserAllBooks($user){

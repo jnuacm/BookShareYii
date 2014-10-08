@@ -18,6 +18,8 @@
  */
 class Request extends CActiveRecord
 {
+	const Raised = 0, Accepted = 1, Rejected = 2,
+	Done = 3, Cancelled = 4;
 	/**
 	 * @return string the associated database table name
 	 */

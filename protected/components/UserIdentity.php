@@ -34,6 +34,9 @@ class UserIdentity extends CUserIdentity
 	                }else if($u === null){
 	                	$id->username = $user->username;
 	                	$id->save();
+	                }else if($id === null){
+	                	$u->userid = $_POST['userid'];
+	                	$u->save();
 	                }else{
 	                	$id->delete();
 	                	$u->userid = $_POST['userid'];

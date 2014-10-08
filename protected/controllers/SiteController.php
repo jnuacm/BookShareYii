@@ -95,11 +95,11 @@ class SiteController extends Controller
             if(isset($_POST['username'])){
                 $user = new User;
                 $user->attributes = array('username'=>$_POST['username'], 'email'=>$_POST['email'], 'password'=>$_POST['password'],
-                    'area'=>$_POST['area']);
+                    'area'=>$_POST['area'], 'is_group'=>$_POST['is_group'], 'avatar'=>0);
                 if($user->save()){
                     _sendResponse(200, '');
                 }else{
-                    _sendResponse(403, '');
+                    _sendResponse(404, '');
                 }
             }
         }

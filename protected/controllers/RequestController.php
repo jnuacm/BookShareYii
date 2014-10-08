@@ -3,14 +3,6 @@ require_once 'response.php';
 require_once 'PushMessage.php';
 class RequestController extends Controller
 {
-        /**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	
-	const RequestRaised = 0, RequestAccepted = 1, RequestRejected = 2,
-		RequestDone = 3, RequestCancelled = 4;
-	 
 	/**
 	 * @return array action filters
 	 */
@@ -31,7 +23,7 @@ class RequestController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('list','view','fromUserList','toUserList'),
+				'actions'=>array('list','view','fromUserList','toUserList','delete'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -39,7 +31,7 @@ class RequestController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -75,7 +67,7 @@ class RequestController extends Controller
 		if(isset($_POST['to']))
 		{
             $request->attributes = array('time'=>new CDbExpression('NOW()'),'from'=>Yii::app()->user->id,'to'=>$_POST['to']
-                    ,'type'=>$_POST['type'],'description'=>$_POST['description'],'status'=>self::RequestRaised);
+                    ,'type'=>$_POST['type'],'description'=>$_POST['description'],'status'=>Request::Raised);
             if($request->save()){
                 $uid = Userid::model()->findByAttributes(array('username'=>$_POST['to']));
             	if($uid !== null){
@@ -91,17 +83,21 @@ class RequestController extends Controller
     private function lendBook($request){
         $from = $request->from;
         $desc = CJSON::decode($request->description);
-        echo $request->description;
         $bookId = $desc['bookid'];
         $book = Book::model()->findByPk($bookId);
         $borrow = new BookUserBorrow;
         $borrow->attributes = array('book_id'=>$bookId, 'borrower'=>$from, 'borrow_time' => new CDbExpression('NOW()'), 'due_time'=>null, 'return_time'=>null);
         $book->holder = $from;
         $book->status = Book::Unavailable;
-        $request->status = self::RequestDone;
-        if($book->save() && $borrow->save() && $request->save()){
-            return true;
-        }else{
+        $request->status = Request::Done;
+        $transaction = Yii::app()->db->beginTransaction();
+        try{
+        	$book->save();
+        	$request->save();
+        	$transaction->commit();
+        	return true;
+        }catch(Exception $e){
+        	$transaction->rollback();
         	return false;
         }
     }
@@ -115,25 +111,35 @@ class RequestController extends Controller
         $borrow->return_time = new CDbExpression('NOW()');
         $book->holder = $book->owner;
         $book->status = Book::Borrowable;
-        $request->status = self::RequestDone;
-        if($book->save() && $borrow->save() && $request->save()){
-            return true;
-        }else{
+        $request->status = Request::Done;
+        $transaction = Yii::app()->db->beginTransaction();
+        try {
+        	$book->save();
+        	$request->save();
+        	$transaction->commit();
+        	return true;
+        } catch (Exception $e) {
+        	$transaction->rollback();
         	return false;
         }
     }
         
-    private function sellBook($request) {
+    private function buyBook($request) {
         $desc = CJSON::decode($request->description);
         $bookId = $desc['bookid'];
         $book = Book::model()->findByPk($bookId);
-        $book->owner = $request->to;
-        $book->status = Book::Borrowable;
-        $request->status = self::RequestDone;
-        if($book->save() && $request->save()){
-            return true;
-        }else{
-        	false;
+        $book->owner = $book->holder = $request->from;
+        $book->status = Book::Unavailable;
+        $request->status = Request::Done;
+        $transaction = Yii::app()->db->beginTransaction();
+        try{
+        	$book->save();
+        	$request->save();
+        	$transaction->commit();
+        	return true;
+        }catch(Exception $e){
+        	$transaction->rollback();
+        	return false;
         }
     }
 
@@ -141,17 +147,20 @@ class RequestController extends Controller
     private function makeFriend($request) {
         $friendship = new Friendship;
         $friendship->attributes = array('user1'=>$request->from, 'user2'=>$request->to, 'time'=>new CDbExpression('NOW()'));
-        $user = Yii::app()->user->id;
-        $friends = Friendship::getUserFriends($user);
-        $request->status = self::RequestDone;
-        if($friendship->save() && $request->save()) {
-            return true;
-        }else{
+        $request->status = Request::Done;
+        $transaction = Yii::app()->db->beginTransaction();
+        try{
+        	$friendship->save();
+        	$request->save();
+        	$transaction->commit();
+        	return true;
+        }catch(Exception $e){
+        	$transaction->rollback();
         	return false;
         }
     }
 
-        /**
+     /**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
@@ -167,10 +176,10 @@ class RequestController extends Controller
             $flag = false;
             parse_str(file_get_contents('php://input'), $data);
             if(isset($data['status'])){
-                if($data['status'] == self::RequestDone){
+                if($data['status'] == Request::Done){
                     $flag = $this->$motion[$request->type]($request);
-                }else if($data['status'] == self::RequestRejected || $data['status'] == self::RequestAccepted
-                		 || $data['status'] == self::RequestCancelled){
+                }else if($data['status'] == Request::Rejected || $data['status'] == Request::Accepted
+                		 || $data['status'] == Request::Cancelled){
                     $flag = $this->turnDownOrAcknowledge($request, $data['status']);
                 }
                 if($flag){
@@ -179,7 +188,9 @@ class RequestController extends Controller
 	                if($uid !== null){
 	                	pushMessage_android($uid->userid, array('subject'=>'request', 'id'=>$id));
 	                }
-	                _sendResponse(200, CJSON::encode($friends));
+	                _sendResponse(200);
+                }else{
+                	_sendResponse(404);
                 }
             }
 	}
@@ -187,7 +198,9 @@ class RequestController extends Controller
         private function turnDownOrAcknowledge($request, $status){
             $request->status = $status;
             if($request->save()){
-                _sendResponse(200);
+                return true;
+            }else{
+            	return false;
             }
         }
        
@@ -199,10 +212,6 @@ class RequestController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
 	/**

@@ -11634,3 +11634,245 @@ Stack trace:
 #11 {main}
 REQUEST_URI=/bookshareyii/index.php/api/request/1
 ---
+2014/10/10 05:17:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/book/search".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/book/search')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/search
+---
+2014/10/10 05:21:18 [error] [php] Undefined index: isbn (D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php:144)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#4 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#7 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): BookController->run()
+#8 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/book/search?isbn=&name=%CB%E3%B7%A8&author=&publisher=
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (144)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/10/10 05:21:51 [error] [php] Undefined index: isbn (D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php:144)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#4 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#7 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): BookController->run()
+#8 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/book/search?isbn=&name=%CB%E3%B7%A8&author=&publisher=
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (144)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/10/10 05:24:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'isdn' in 'field list'. The SQL statement executed was: SELECT id, name, isdn, author, publisher, small_url, status, 
+				visibility, holder, owner FROM `tbl_book` `t` WHERE name LIKE :ycp0.
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\models\Book.php (120)
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (146)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/10/10 05:24:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'isdn' in 'field list'. The SQL statement executed was: SELECT id, name, isdn, author, publisher, small_url, status, 
+				visibility, holder, owner FROM `tbl_book` `t` WHERE name LIKE :ycp0' in D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\Program Files\xampp\htdocs\bookshareyii\protected\models\Book.php(120): CActiveRecord->findAll(Object(CDbCriteria))
+#4 D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php(146): Book->search()
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\actions\CInlineAction.php(49): BookController->actionSearch()
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(291): CFilterChain->run()
+#13 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): CController->run('search')
+#15 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('book/search')
+#16 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/search?isbn=&name=%CB%E3%B7%A8&author=&publisher=
+---
+2014/10/10 05:25:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'small_url' in 'field list'. The SQL statement executed was: SELECT id, name, isbn, author, publisher, small_url, status, 
+				visibility, holder, owner FROM `tbl_book` `t` WHERE name LIKE :ycp0.
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\models\Book.php (120)
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (146)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/10/10 05:25:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'small_url' in 'field list'. The SQL statement executed was: SELECT id, name, isbn, author, publisher, small_url, status, 
+				visibility, holder, owner FROM `tbl_book` `t` WHERE name LIKE :ycp0' in D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\Program Files\xampp\htdocs\bookshareyii\protected\models\Book.php(120): CActiveRecord->findAll(Object(CDbCriteria))
+#4 D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php(146): Book->search()
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\actions\CInlineAction.php(49): BookController->actionSearch()
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(291): CFilterChain->run()
+#13 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): CController->run('search')
+#15 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('book/search')
+#16 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/search?isbn=&name=%CB%E3%B7%A8&author=&publisher=
+---
+2014/10/10 05:25:40 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.isGuest" is not defined.' in D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CModule.php(105): CComponent->__get('isGuest')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\protected\models\Book.php(126): CModule->__get('isGuest')
+#2 D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php(146): Book->search()
+#3 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\actions\CInlineAction.php(49): BookController->actionSearch()
+#4 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): CController->run('search')
+#13 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('book/search')
+#14 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/search?isbn=&name=%CB%E3%B7%A8&author=&publisher=
+---
+2014/10/10 06:01:31 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT id, name, isbn, author, publisher, small_img, status, 
+				visibility, holder, owner FROM `tbl_book` `t` WHERE name LIKE :name.
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\models\Book.php (122)
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (146)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/10/10 06:01:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT id, name, isbn, author, publisher, small_img, status, 
+				visibility, holder, owner FROM `tbl_book` `t` WHERE name LIKE :name' in D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\Program Files\xampp\htdocs\bookshareyii\protected\models\Book.php(122): CActiveRecord->findAll(Object(CDbCriteria))
+#4 D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php(146): Book->search()
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\actions\CInlineAction.php(49): BookController->actionSearch()
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(291): CFilterChain->run()
+#13 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): CController->run('search')
+#15 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('book/search')
+#16 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/search?isbn=&name=%CB%E3%B7%A8&author=&publisher=
+---
+2014/10/10 06:05:53 [error] [php] Undefined index: isbn (D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php:144)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#4 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#7 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): BookController->run()
+#8 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/book/search
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (144)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/10/14 04:21:15 [error] [php] Undefined index: isbn (D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php:144)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#4 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#7 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): BookController->run()
+#8 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/book/search?name=%CB%E3%B7%A8
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (144)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/10/14 04:24:11 [error] [php] Undefined index: name (D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php:144)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#4 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#7 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): BookController->run()
+#8 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/book/search?isbn=9787111407010
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (144)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/10/14 08:51:37 [error] [php] Undefined index: isbn (D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php:144)
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(133): BookController->runAction()
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CInlineFilter.php(58): BookController->filterAccessControl()
+#4 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): BookController->runActionWithFilters()
+#7 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): BookController->run()
+#8 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CWebApplication->run()
+REQUEST_URI=/bookshareyii/index.php/api/book/search
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (144)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/10/14 08:54:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/book/search".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/book/search')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/book/search
+---
+2014/10/27 12:38:00 [error] [exception.CException] exception 'CException' with message 'RequestController and its behaviors do not have a method or closure named "sellBook".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\RequestController.php(180): CComponent->__call('sellBook', Array)
+#1 D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\RequestController.php(180): RequestController->sellBook(Object(Request))
+#2 [internal function]: RequestController->actionUpdate('7')
+#3 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(RequestController), Array)
+#4 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(RequestController), Object(ReflectionMethod), Array)
+#5 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(291): CFilterChain->run()
+#12 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(282): CController->run('update')
+#14 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('request/update')
+#15 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Program Files\xampp\htdocs\bookshareyii\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/bookshareyii/index.php/api/request/7
+---

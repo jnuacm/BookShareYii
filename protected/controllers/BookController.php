@@ -9,7 +9,6 @@ class BookController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-		//	'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -140,9 +139,12 @@ class BookController extends Controller
         _sendResponse(200, CJSON::encode($history));
     }
         
-    public function actionSearch($key) {
-        $books = Book::searchBooks($key);
-        _sendResponse(200, CJSON::encode($books));
+    public function actionSearch() {
+        $book = new Book;
+        $book->unsetAttributes();
+        $book->attributes = array('isbn'=>$_GET['isbn'], 'name'=>$_GET['name'],
+        	'author'=>$_GET['author'], 'publisher'=>$_GET['publisher']);
+        _sendResponse(200, CJSON::encode($book->search()));
     }
 
 	/**

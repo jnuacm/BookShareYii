@@ -65,8 +65,8 @@ class Book extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'owner0' => array(self::BELONGS_TO, 'User', 'owner'),
-			'holder0' => array(self::BELONGS_TO, 'User', 'holder'),
+			'owner' => array(self::BELONGS_TO, 'User', 'owner'),
+			'holder' => array(self::BELONGS_TO, 'User', 'holder'),
 			'bookUserBorrows' => array(self::HAS_MANY, 'BookUserBorrow', 'book_id'),
 		);
 	}
@@ -109,25 +109,38 @@ class Book extends CActiveRecord
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
-		$criteria=new CDbCriteria;
+		$bookCriteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('isbn',$this->isbn,true);
-		$criteria->compare('author',$this->author,true);
-		$criteria->compare('description',$this->description,true);
-		$criteria->compare('publisher',$this->publisher,true);
-		$criteria->compare('owner',$this->owner,true);
-		$criteria->compare('holder',$this->holder,true);
-		$criteria->compare('status',$this->status);
-		$criteria->compare('visibility',$this->visibility);
-		$criteria->compare('large_img',$this->large_img);
-		$criteria->compare('medium_img',$this->medium_img);
-		$criteria->compare('small_img',$this->small_img);
-		
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
+		$bookCriteria->compare('name',$this->name,true);
+		$bookCriteria->compare('isbn',$this->isbn,true);
+		$bookCriteria->compare('author',$this->author,true);
+		$bookCriteria->compare('publisher',$this->publisher,true);
+		$bookCriteria->select = 'id, name, isbn, author, publisher, small_img, status, 
+				visibility, holder, owner';
+		$rows = Book::model()->findAll($bookCriteria);
+	// 	return $rows;
+		$friendCriteria = new CDbCriteria;
+		$friendCriteria->condition = 'user1 = :user OR user2 = :user';
+		$friendCriteria->params = array(':user'=>Yii::app()->user->id);
+		$friend = array();
+		if(!Yii::app()->user->isGuest){
+			$friendships = Friendship::model()->findAll($friendCriteria);
+			foreach($friendships as $fs){
+				if($fs['user1'] === Yii::app()->user->id){
+					$friend[] = $fs['user2'];
+				}else{
+					$friend[] = $fs['user1'];
+				}
+			}
+		}
+		$books = array();
+		foreach($rows as $row){
+			if($row['visibility'] == self::VisibleToAll || ($row['visibility'] === 
+					self::VisibleToFriends && in_array($row['holder'], $friend))){
+				$books[] = $row;
+			}
+		}
+		return $books;
 	}
 	
         public static function getUserOwnBooks($user){
@@ -150,27 +163,6 @@ class Book extends CActiveRecord
         
         public static function getUserAllBooks($user){
             return array('own_book'=>self::getUserOwnBooks($user), 'borrowed_book'=>self::getUserBorrowedBooks($user));
-        }
-        
-        public static function searchBooks($key) {
-            $sql = "select * from tbl_book where concat(name,isbn,author,publisher) like '%".$key."%'";
-            $rows = Book::model()->findAllBySql($sql);
-            $books = array();
-            foreach($rows as $row) {
-                if($row->attributes['visibility']===self::VisibleToAll) {
-                    $books[] = $row;
-                }
-                else if($row->attributes['visibility']===self::VisibleToFriends) {
-                    $user = Yii::app()->user->id;
-                    $owner = $row->attributes['owner'];
-                    $sql = "SELECT * FROM tbl_friendship WHERE (user1=:user AND user2=:owner) OR (user1=:owner AND user2=:user)";
-                    $friendship = Friendship::model()->findBySql($sql, array(':user'=>$user,':owner'=>$owner));
-                    if($friendship !== null){
-                        $books[] = $row;
-                    }
-                }
-            }
-            return $books;
         }
 
 	/**

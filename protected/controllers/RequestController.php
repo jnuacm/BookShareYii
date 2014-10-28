@@ -167,7 +167,7 @@ class RequestController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            $motion = array(1=>'lendBook', 2=>'regainBook', 3=>'sellBook', 4=>'makeFriend');
+            $motion = array(1=>'lendBook', 2=>'regainBook', 3=>'makeFriend', 4=>'buyBook');
             $request = Request::model()->findByPk($id);
             if($request == null){
                 _sendResponse(404);

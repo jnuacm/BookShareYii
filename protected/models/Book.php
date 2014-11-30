@@ -17,7 +17,8 @@
  * @property string $large_img
  * @property string $medium_img
  * @property string $small_img
- *
+ * @property string $tags
+ * 
  * The followings are the available model relations:
  * @property User $owner0
  * @property User $holder0
@@ -45,7 +46,7 @@ class Book extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, isbn, owner, holder', 'required'),
+			array('name, isbn, owner, holder, tags', 'required'),
 			array('status, visibility', 'numerical', 'integerOnly'=>true),
 			array('name, author, publisher, large_img, medium_img, small_img', 'length', 'max'=>256),
 			array('isbn', 'length', 'max'=>32),
@@ -90,6 +91,7 @@ class Book extends CActiveRecord
 			'large_img' => 'Large Image',
 			'medium_img' => 'Medium Image',
 			'small_img' => 'Small Image',
+			'tags' => 'Tags',
 		);
 	}
 
@@ -146,7 +148,7 @@ class Book extends CActiveRecord
         public static function getUserOwnBooks($user){
         	$criteria=new CDbCriteria;
 			$criteria->select='id, name, isbn, author, publisher, owner, holder, status, 
-        			visibility, small_img'; // only select the 'title' column
+        			visibility, small_img, tags'; // only select the 'title' column
 			$criteria->condition='owner=:owner';
 			$criteria->params=array(':owner'=>$user);
 			return Book::model()->findAll($criteria);
@@ -155,7 +157,7 @@ class Book extends CActiveRecord
         public static function getUserBorrowedBooks($user){
         	$criteria=new CDbCriteria;
         	$criteria->select='id, name, isbn, author, publisher, owner, holder, status,
-        			visibility, small_img'; // only select the 'title' column
+        			visibility, small_img, tags'; // only select the 'title' column
         	$criteria->condition='holder=:holder and owner<>holder';
         	$criteria->params=array(':holder'=>$user);
            	return Book::model()->findAll($criteria);

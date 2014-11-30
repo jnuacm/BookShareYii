@@ -11876,3 +11876,27 @@ Stack trace:
 #17 {main}
 REQUEST_URI=/bookshareyii/index.php/api/request/7
 ---
+2014/11/27 09:54:11 [warning] [application] Failed to set unsafe attribute "tags" of "Book".
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (67)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/11/27 09:54:22 [warning] [application] Failed to set unsafe attribute "tags" of "Book".
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (67)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/11/27 09:54:33 [warning] [application] Failed to set unsafe attribute "tags" of "Book".
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (67)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/11/27 09:54:45 [warning] [application] Failed to set unsafe attribute "tags" of "Book".
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (67)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/11/27 09:54:55 [warning] [application] Failed to set unsafe attribute "tags" of "Book".
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (67)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/11/27 10:02:30 [warning] [application] Failed to set unsafe attribute "tags" of "Book".
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (67)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/11/27 13:10:39 [warning] [application] Failed to set unsafe attribute "tags" of "Book".
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (67)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)
+2014/11/27 13:12:01 [warning] [application] Failed to set unsafe attribute "tags" of "Book".
+in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\BookController.php (67)
+in D:\Program Files\xampp\htdocs\bookshareyii\index.php (13)

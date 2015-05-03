@@ -1,0 +1,17 @@
+<?php
+require "../models/UserModel.php";
+require "AES.php";
+require "filter_sqli.php";
+
+function check_cookie($username,$password){
+    if((null != $username)&&(null != $password)){
+        $username = filter_sqli($username);
+        $user = new User(0,0,0,0,0,0);
+        $user->SelectUserByName($username);
+        if(null != $user->getUserName()){
+            $password = AESDecryptStrin($password);
+            if($password == $user->getUserPassword())
+                return true;
+    }
+    return false;
+}

@@ -46,7 +46,10 @@ return array(
 						array('avatar/view', 'pattern'=>'api/avatar/<user:\w+>', 'verb'=>'GET'),
 						array('avatar/update', 'pattern'=>'api/avatar/<user:\w+>', 'verb'=>'PUT'),
 						array('avatar/delete', 'pattern'=>'api/avatar/<user:\w+>', 'verb'=>'DELETE'),
-		
+						
+						array('comment/listOnIsbn', 'pattern'=>'api/comment/isbn/<isbn:\w+>', 'verb'=>'GET'),
+						array('comment/create', 'pattern'=>'api/comment/isbn/<isbn:\w+>', 'verb'=>'POST'),
+						
                         array('book/<suffix>list', 'pattern'=>'api/book/<user:\w+>/<suffix:((all)|(own)|(borrowed))>', 'verb'=>'GET'),
                         array('book/history', 'pattern'=>'api/book/<id:\w+>/history', 'verb'=>'GET'),
                         array('book/search', 'pattern'=>'api/book/search', 'verb'=>'GET'),

@@ -11,7 +11,7 @@ function right_output ( $str )
 }
 
 //推送android设备消息
-function pushMessage_android ($user_id, $content)
+function pushMessage_android ($user_id, $content, $push_type = 1)
 {
 	require_once ( "/../Channel.class.php" ) ;
 	$apiKey = "OErne3qA5cR5q14A0rZiSIaF";
@@ -20,7 +20,7 @@ function pushMessage_android ($user_id, $content)
 	//推送消息到某个user，设置push_type = 1;
 	//推送消息到一个tag中的全部user，设置push_type = 2;
 	//推送消息到该app中的全部user，设置push_type = 3;
-	$push_type = 1; //推送单播消息
+	
 	$optional[Channel::USER_ID] = $user_id; //如果推送单播消息，需要指定user
 	//optional[Channel::TAG_NAME] = "xxxx";  //如果推送tag消息，需要指定tag_name
 	

@@ -1,0 +1,9 @@
+<?php
+require '../Models/BooksModel.php'
+
+
+$books = new Books();
+$books->getBooksByOwner($_COOKIE['username']);
+$books = $books->getBooks();
+
+

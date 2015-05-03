@@ -1,0 +1,66 @@
+<?php
+    class User{
+        var $username;
+        var $email;
+        var $password;
+        var $area;
+        var $is_group;
+        var $avatar;
+        
+        function User($username,$email,$password,$area,$is_group,$avatar){
+            $this->username = $username;
+            $this->email = $email;
+            $this->password = MD5($password);
+            $this->area = $area;
+            $this->is_group = $is_group;
+            $this->avatar = $avatar;
+        }
+        
+        public function getUserByName($name){
+            $pdo = new PDO("mysql:host=localhost;dbname=book_share","root","toor");
+            $query = "SELECT * FROM tbl_user WHERE username = '".$name."';";
+            $result = $pdo->query($query);
+            if($result != null){
+                $result = $result->fetch(PDO::FETCH_ASSOC);
+                $this->username= $result["username"];
+                $this->password = $result["password"];
+                $this->email = $result["email"];
+                $this->area = $result["area"];
+                $this->is_group = $result["is_group"];
+                $this->avatar = $result["avatar"];
+            }else{
+                $this->username= null;
+                $this->password =  null;
+                $this->email =  null;
+                $this->area =  null;
+                $this->is_group =  null;
+                $this->avatar =  null;
+               }
+            return $this;
+        }
+        
+        public function insterUser(){
+            $pdo = new PDO("mysql:host=localhost;dbname=book_share","root","toor");
+            $query = "INSERT INTO tbl_user(username,email,password,area,is_group,avatar) VALUES('".$this->username."','".$this->email."','".$this->password."','".$this->area."',".$this->is_group.",".$this->avatar.");";
+            $result = $pdo->query($query);
+        }
+        
+        public function updateUser(){
+            $pdo = new PDO("mysql:host=localhost;dbname=book_share","root","toor");
+            $query = "UPDATE tbl_user SET username = '".$this->username."',email = '".$this->email."',password = '".$this->password."',area = '".$this->area."',is_group = ".$this->is_group.",avatar = ".$this->avatar." WHERE username = '".$this->username."';";
+            $result = $pdo->query($query);
+        }
+        
+        public function deleteUser(){
+            $pdo = new PDO("mysql:host=localhost;dbname=book_share","root","toor");
+            $query = "DELETE FROM tbl_user "." WHERE username = '".$this->username."';";
+            $result = $pdo->query($query);
+        }
+    }
+    
+$test = new User(0,0,0,0,0,0);
+$test = $test->getUserByName("kk");
+$test->deleteUser();
+    
+    
+    

@@ -74,10 +74,10 @@ return array(
                 */
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=book_share',
+			'connectionString' => 'mysql:host=rdsmf2iu2jm2y2y.mysql.rds.aliyuncs.com;dbname=rk906umf9k789106',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'rk906umf9k789106',
+			'password' => '123456',
 			'charset' => 'utf8',
 		),
             

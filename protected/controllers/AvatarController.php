@@ -1,5 +1,5 @@
 <?php
-require 'response.php';
+require dirname(__FILE__).'/response.php';
 class AvatarController extends Controller
 {
 	private static $topSize = 2048000;

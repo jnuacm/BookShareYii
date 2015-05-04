@@ -1,6 +1,6 @@
 <?php
-require_once 'response.php';
-require_once 'PushMessage.php';
+require_once dirname(__FILE__).'/response.php';
+require_once dirname(__FILE__).'/PushMessage.php';
 class RequestController extends Controller
 {
 	/**
@@ -68,6 +68,10 @@ class RequestController extends Controller
 		{
             $request->attributes = array('time'=>new CDbExpression('NOW()'),'from'=>Yii::app()->user->id,'to'=>$_POST['to']
                     ,'type'=>$_POST['type'],'description'=>$_POST['description'],'status'=>Request::Raised);
+			if(Request::model()->findByAttributes(array('type'=>$_POST['type'], 'from'=>Yii::app()->user->id, 'to'=>$_POST['to']))){
+				_sendResponse(404, 'Request Already Exists');
+				break;
+			}
             if($request->save()){
                 $uid = Userid::model()->findByAttributes(array('username'=>$_POST['to']));
             	if($uid !== null){
@@ -88,6 +92,9 @@ class RequestController extends Controller
         $borrow = new BookUserBorrow;
         $borrow->attributes = array('book_id'=>$bookId, 'borrower'=>$from, 'borrow_time' => new CDbExpression('NOW()'), 'due_time'=>null, 'return_time'=>null);
         $book->holder = $from;
+		if($book->status === Book::Unavailable){
+			return false;
+		}
         $book->status = Book::Unavailable;
         $request->status = Request::Done;
         $transaction = Yii::app()->db->beginTransaction();
@@ -129,6 +136,9 @@ class RequestController extends Controller
         $bookId = $desc['bookid'];
         $book = Book::model()->findByPk($bookId);
         $book->owner = $book->holder = $request->from;
+		if($book->status === Book::Unavailable){
+			return false;
+		}
         $book->status = Book::Unavailable;
         $request->status = Request::Done;
         $transaction = Yii::app()->db->beginTransaction();
@@ -147,6 +157,10 @@ class RequestController extends Controller
     private function makeFriend($request) {
         $friendship = new Friendship;
         $friendship->attributes = array('user1'=>$request->from, 'user2'=>$request->to, 'time'=>new CDbExpression('NOW()'));
+		if(Friendship::model()->findByAttributes(array('user1'=>$request->from, 'user2'=>$request->to)
+		 ||  Friendship::model()->findByAttributes(array('user1'=>$request->to, 'user2'=>$request->to)){
+			return false;
+		 }
         $request->status = Request::Done;
         $transaction = Yii::app()->db->beginTransaction();
         try{

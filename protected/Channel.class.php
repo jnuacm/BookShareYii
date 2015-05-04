@@ -1,14 +1,4 @@
 ﻿<?php
-/**
- * 百度云消息通道服务 PHP SDK
- * 
- * 本文件提供百度云消息通道服务的PHP版本SDK
- * 
- * @author 百度移动.云事业部
- * @copyright Copyright (c) 2012-2020 百度在线网络技术(北京)有限公司
- * @version 2.0.0
- * @package
- */
 if ( ! defined ( 'API_ROOT_PATH' ) ) 
 {
 	define ( 'API_ROOT_PATH', dirname( __FILE__));
@@ -16,164 +6,30 @@ if ( ! defined ( 'API_ROOT_PATH' ) )
 require_once ( API_ROOT_PATH . '/lib/RequestCore.class.php' );
 require_once ( API_ROOT_PATH . '/lib/ChannelException.class.php' );
 require_once ( API_ROOT_PATH . '/lib/BaeBase.class.php' );
-
-/**
- * 
- * Channel
- * 
- * Channel类提供百度云消息通道服务的PHP版本SDK，用户首先实例化这个类，设置自己的apiKey与secretKey，即可使用百度云消息通道服务
- * 
- * @author 百度云消息通道服务@百度云架构部
- * 
- * @version 1.0.0.0
- */
 class Channel extends BaeBase
 {
-	/**
-	 * 可选参数的KEY
-	 * 
-	 * 用户关注：是
-	 * 在调用Channel类的SDK方法时，根据用户的个性化需要，可能需要传入可选参数，而可选参数需要放在关联数组$optional中传入，
-	 * 这里定义了$optional数组可用的KEY
-	 */
-	
-	/**
-	 * 发起请求时的时间戳
-	 * 
-	 * @var int TIMESTAMP
-	 */
 	const TIMESTAMP = 'timestamp';
-	/**
-	 * 请求过期的时间
-	 * 
-	 * 如果不填写，默认为10分钟
-	 * 
-	 * @var int EXPIRES
-	 */
 	const EXPIRES = 'expires';
-	/**
-	 * API版本号
-	 * 
-	 * 用户一般不需要关注此项
-	 * 
-	 * @var int VERSION
-	 */
 	const VERSION = 'v';
-	/**
-	 * 消息通道ID号
-	 * 
-	 * @var int CHANNEL_ID
-	 */
 	const CHANNEL_ID = 'channel_id';
-	/**
-	 * 用户ID的类型
-	 * 
-	 * 0：百度用户标识对称加密串；1：百度用户标识明文
-	 * 
-	 * @var string USER_TYPE
-	 */
 	const USER_TYPE = 'user_type';
-	/**
-	 * 设备类型
-	 * 
-	 * 1：浏览器设备；2：PC设备；3：andorid设备
-	 * 
-	 * @var int DEVICE_TYPE
-	 */
 	const DEVICE_TYPE = 'device_type';
-	/**
-	 * 第几页
-	 * 
-	 * 批量查询时，需要指定start，默认为第0页
-	 * 
-	 * @var int START
-	 */
 	const START = 'start';
-	/**
-	 * 每页多少条记录
-	 * 
-	 * 批量查询时，需要指定limit，默认为100条
-	 * 
-	 * @var int LIMIT
-	 */
 	const LIMIT = 'limit';
-	/**
-	 * 消息ID json字符串
-	 * 
-	 * @var string MSG_IDS
-	 */
 	const MSG_IDS = 'msg_ids';
 	const MSG_KEYS = 'msg_keys';
 	const IOS_MESSAGES = 'ios_messages';
 	const WP_MESSAGES = 'wp_messages';
-	/**
-	 * 消息类型
-	 * 
-	 * 扩展类型字段，0：默认类型
-	 * 
-	 * @var int MESSAGE_TYPE
-	 */
 	const MESSAGE_TYPE = 'message_type';
-	/**
-	 * 消息超时时间
-	 * 
-	 * @var int MESSAGE_EXPIRES
-	 */
 	const MESSAGE_EXPIRES = 'message_expires';
-	/**
-	 * ios应用的部署状态，只针对ios应用
-	 * 1为开发状态
-	 * 2为发布状态
-	 * 若不指定，默认为生产状态
-     */
 	const DEPLOY_STATUS = 'deploy_status';
-    /**
-     * 消息标签名称
-     * 
-     * @var string TAG_NAME
-     */
     const TAG_NAME = 'tag';
-    
-    /**
-     * 消息标签描述
-     * 
-     * @var stirng TAG_INFO
-     */
     const TAG_INFO = 'info';
-    
-    /**
-     * 消息标签id
-     * 
-     * @var int TAG_ID
-     */
     const TAG_ID = 'tid';
-    
-    /**
-     * 封禁时间
-     * 
-     * @var int BANNED_TIME
-     */
     const BANNED_TIME = 'banned_time';
-    
-    /**
-     * 回调域名
-     * 
-     * @var string CALLBACK_DOMAIN
-     */
     const CALLBACK_DOMAIN = 'domain';
-    
-    /**
-     * 回调uri
-     * 
-     * @var string CALLBACK_URI
-     */
     const CALLBACK_URI = 'uri';
 
-	/**
-	 * Channel常量
-	 * 
-	 * 用户关注：否
-	 */
 	const APPID = 'appid';
 	const ACCESS_TOKEN = 'access_token';
 	const API_KEY = 'apikey';
@@ -193,12 +49,7 @@ class Channel extends BaeBase
 	const RELEASE_CERT = "release_cert";
 	const DEV_CERT = "dev_cert";
 	const PUSH_TYPE = 'push_type';
-	
-	/**
-	 * Channel私有变量
-	 * 
-	 * 用户关注：否
-	 */
+
 	protected $_apiKey = NULL;
 	protected $_secretKey = NULL;
 	protected $_requestId = 0;
@@ -213,22 +64,12 @@ class Channel extends BaeBase
 	const PUSH_TO_ALL = 3;
 	const PUSH_TO_DEVICE = 4;
 
-	/**
-	 * Channel 错误常量
-	 * 
-	 * 用户关注：否
-	 */
 	const CHANNEL_SDK_SYS = 1;
 	const CHANNEL_SDK_INIT_FAIL = 2;
 	const CHANNEL_SDK_PARAM = 3;
 	const CHANNEL_SDK_HTTP_STATUS_ERROR_AND_RESULT_ERROR = 4;
 	const CHANNEL_SDK_HTTP_STATUS_OK_BUT_RESULT_ERROR = 5;
 
-	/**
-	 * 错误常量与错误字符串的映射
-	 * 
-	 * 用户关注：否
-	 */
 	protected $_arrayErrorMap = array
 		( 
 		 '0' => 'php sdk error',
@@ -239,12 +80,6 @@ class Channel extends BaeBase
 		 self::CHANNEL_SDK_HTTP_STATUS_OK_BUT_RESULT_ERROR => 'http status is ok, but the body returned is not a json string',
 		);
 
-	/**
-     * 2.0版rest API里面部分方法将channel_id放在url中，其余部分放在包体中
-     * 记录需要放在包体中的方法
-     *
-     * 用户关注：否
-     */
      protected $_method_channel_in_body = array
         (
         'push_msg',
@@ -254,18 +89,7 @@ class Channel extends BaeBase
         'query_user_tags'
         );
 	
-	/**
-	 * setApiKey
-	 * 
-	 * 用户关注：是
-	 * 服务类方法， 设置Channel对象的apiKey属性，如果用户在创建Channel对象时已经通过参数设置了apiKey，这里的设置将会覆盖以前的设置
-	 * 
-	 * @access public
-	 * @param string $apiKey
-	 * @return 成功：true，失败：false
-	 * 
-	 * @version 
-	 */
+
 	public function setApiKey ( $apiKey )
 	{
 		$this->_resetErrorStatus (  );
@@ -288,18 +112,6 @@ class Channel extends BaeBase
 		return true;
 	}
 
-	/**
-	 * setSecretKey
-	 * 
-	 * 用户关注：是
-	 * 服务类方法， 设置Channel对象的secretKey属性，如果用户在创建Channel对象时已经通过参数设置了secretKey，这里的设置将会覆盖以前的设置
-	 * 
-	 * @access public
-	 * @param string $secretKey
-	 * @return 成功：true，失败：false
-	 * 
-	 * @version 
-	 */
 	public function setSecretKey ( $secretKey )
 	{
 		$this->_resetErrorStatus (  );
@@ -323,19 +135,6 @@ class Channel extends BaeBase
 	}
 	
 	
-	/**
-	 * setCurlOpts
-	 * 
-	 * 用户关注：是
-	 * 服务类方法， 设置HTTP交互的OPTION，同PHP curl库的所有opt参数
-	 * 
-	 * @access public
-	 * @param array $arr_curlopt
-	 * @return 成功：true，失败：false
-	 * @throws BcmsException
-	 * 
-	 * @version 1.2.0
-	 */
 	public function setCurlOpts($arr_curlOpts)
 	{
 		$this->_resetErrorStatus();
@@ -355,18 +154,6 @@ class Channel extends BaeBase
 		return true;
 	}
 
-	/**
-	 * setHost
-	 * 
-	 * 用户关注：是
-	 * 服务类方法， 设置Channel对象的后端host属性，创建Channel对象时会选择默认的host，如果需要修改host，调用该方法修改。
-	 * 
-	 * @access public
-	 * @param string $host
-	 * @return 成功：true，失败：false
-	 * 
-	 * @version 
-	 */
 	public function setHost ( $host )
 	{
 		$this->_resetErrorStatus (  );
@@ -389,36 +176,11 @@ class Channel extends BaeBase
 		return true;
 	}
 
-	/**
-	 * getRequestId
-	 * 
-	 * 用户关注：是
-	 * 服务类方法，获取上次调用的request_id，如果SDK本身错误，则直接返回0
-	 * 
-	 * @access public
-	 * @return 上次调用服务器返回的request_id
-	 * 
-	 * @version 1.0.0.0
-	 */
 	public function getRequestId (  )
 	{
 		return $this->_requestId;
 	}
 	
-	/**
-	 * queryBindList
-	 * 
-	 * 用户关注：是
-	 * 
-	 * 供服务器端根据userId[、channelId]查询绑定信息
-	 * 
-	 * @access public
-	 * @param string $userId 用户ID号
-	 * @param array $optional 可选参数，支持的可选参数包括：Channel::CHANNEL_ID、Channel::DEVICE_TYPE、Channel::START、Channel::LIMIT
-	 * @return 成功：PHP数组；失败：false
-	 * 
-	 * @version 1.0.0.0
-	 */
 	public function queryBindList ( $userId, $optional = NULL ) 
 	{
 		$this->_resetErrorStatus (  );
@@ -436,20 +198,6 @@ class Channel extends BaeBase
 		}
 	}
 	
-	/**
-	 * bindVerify
-	 * 
-	 * 用户关注：是
-	 * 
-	 * 校验userId[、channelId]是否已经绑定
-	 * 
-	 * @access public
-	 * @param string $userId 用户ID号
-	 * @param array $optional 可选参数，支持的可选参数包括：Channel::CHANNEL_ID、Channel::DEVICE_TYPE
-	 * @return 成功：PHP数组；失败：false
-	 * 
-	 * @version 1.0.0.0
-	 */
 	public function verifyBind ( $userId, $optional = NULL ) 
 	{
 		$this->_resetErrorStatus (  );
@@ -467,20 +215,6 @@ class Channel extends BaeBase
 		}
 	}
 	
-	/**
-	 * fetchMessage
-	 * 
-	 * 用户关注：是
-	 * 
-	 * 根据userId[、channelId]查询消息
-	 * 
-	 * @access public
-	 * @param string $userId 用户ID号
-	 * @param array $optional 可选参数，支持的可选参数包括：Channel::CHANNEL_ID、Channel::START、Channel::LIMIT
-	 * @return 成功：PHP数组；失败：false
-	 * 
-	 * @version 1.0.0.0
-	 */
 	public function fetchMessage ( $userId, $optional = NULL ) 
 	{
 		$this->_resetErrorStatus (  );
@@ -498,20 +232,6 @@ class Channel extends BaeBase
 		}
 	}
 	
-	/**
-	 * fetchMessageCount
-	 * 
-	 * 用户关注：是
-	 * 
-	 * 根据userId[、channelId]查询消息的个数
-	 * 
-	 * @access public
-	 * @param string $userId 用户ID号
-	 * @param array $optional 可选参数，支持的可选参数包括：Channel::CHANNEL_ID
-	 * @return 成功：PHP数组；失败：false
-	 * 
-	 * @version 1.0.0.0
-	 */
 	public function fetchMessageCount ( $userId, $optional = NULL ) 
 	{
 		$this->_resetErrorStatus (  );
@@ -529,21 +249,6 @@ class Channel extends BaeBase
 		}
 	}
 	
-	/**
-	 * deleteMessage
-	 * 
-	 * 用户关注：是
-	 * 
-	 * 根据userId、msgIds[、channelId]删除消息
-	 * 
-	 * @access public
-	 * @param string $userId 用户ID号
-	 * @param string $msgIds 要删除哪些消息,如果是数组格式，则会自动做json_encode;
-	 * @param array $optional 可选参数，支持的可选参数包括：Channel::CHANNEL_ID
-	 * @return 成功：PHP数组；失败：false
-	 * 
-	 * @version 1.0.0.0
-	 */
 	public function deleteMessage ( $userId, $msgIds, $optional = NULL ) 
 	{
 		$this->_resetErrorStatus (  );
@@ -565,22 +270,6 @@ class Channel extends BaeBase
 	}
 
 
-	/**
-	 * pushMessage
-	 * 用户关注： 是
-	 * 根据pushType, messages, message_type, [optinal] 推送消息
-	 * @access public
-	 * @param int $pushType 推送类型 取值范围 1-3, 1:单人，2：一群人tag， 3：所有人
-	 * @param string $messages 要发送的消息，如果是数组格式，则会自动做json_encode;如果是json格式给出，必须与$msgKeys对应起来;
-     * @param array $optional 可选参数,如果$pushType为单人，必须指定Channel::USER_ID(例:$optional[Channel::USER_ID] = 'xxx'),
-	 *		如果$pushType为tag，必须指定Channel::TAG,
-	 * 		其他可选参数：Channel::MSG_KEYS 发送的消息key，如果是数组格式，则会自动做json_encode，必须与$messages对应起来;
-	 *		Channel::MESSAGE_TYPE 消息类型，取值范围 0-1, 0:消息（透传），1：通知，默认为0
-	 *		还可指定Channel::MESSAGE_EXPIRES, Channel::MESSAGE_EXPIRES, Channel::CHANNLE_ID等
-	 *
-	 * @return 成功：PHP数组；失败:false
-	 * @version 2.0.0.0
-	*/
 	public function pushMessage($pushType, $messages, $msgKeys, $optional = NULL)
 	{
 		$this->_resetErrorStatus();
@@ -628,18 +317,6 @@ class Channel extends BaeBase
 	}
 
  
-
-	/**
-	 * initAppIoscert: 初始化应用ios证书
-	 * 
-	 * 用户关注: 是
-	 *
-	 * @param string $name 证书名称
-	 * @param string description 证书描述
-	 * @param string $cert 证书内容
-	 * @param array $optional
-	 * @return 成功：PHP数组；失败：false  
-	 */
 	public function initAppIoscert($name, $description, $release_cert, $dev_cert, $optional = null)
 	{		
 		$this->_resetErrorStatus();
@@ -654,14 +331,6 @@ class Channel extends BaeBase
 		}
 	}
 
-	/**
-	 * updateAppIoscert: 修改ios证书内容
-	 * 
-	 * 用户关注: 是
-	 *
-	 * @param array $optional可选参数，支持的可选参数包括 self::NAME, self::DESCRIPTION, self::CERT
-	 * @return 成功：PHP数组；失败：false   
-	 */
 	public function updateAppIoscert($optional = null)
 	{		
 		$this->_resetErrorStatus();
@@ -676,14 +345,6 @@ class Channel extends BaeBase
 		}
 	}
 
-	/**
-	 * queryAppIoscert: 查询ios证书内容
-	 * 
-	 * 用户关注: 是
-	 *
-	 * @param array $optional
-	 * @return 成功：PHP数组；失败：false   
-	 */
 	public function queryAppIoscert($optional = null)
 	{
 		$this->_resetErrorStatus();
@@ -698,14 +359,6 @@ class Channel extends BaeBase
 		}
 	}
 
-	/**
-	 * deleteAppIoscert: 删除ios证书内容
-	 * 
-	 * 用户关注: 是
-	 *
-	 * @param array $optional
-	 * @return 成功：PHP数组；失败：false   
-	 */
 	public function deleteAppIoscert($optional = null)
 	{
 		$this->_resetErrorStatus();
@@ -720,20 +373,6 @@ class Channel extends BaeBase
 		}
 	}
 	
-	
-	/**
-	 * queryDeviceType
-	 * 
-	 * 用户关注：是
-	 * 
-	 * 根据channelId查询设备类型
-	 * 
-	 * @access public
-	 * @param string $channelId 用户channel的ID号
-	 * @return 成功：PHP数组；失败：false
-	 * 
-	 * @version 1.0.0.0
-	 */
 	public function queryDeviceType ( $channelId, $optional = NULL ) 
 	{
 		$this->_resetErrorStatus (  );
@@ -751,17 +390,6 @@ class Channel extends BaeBase
 		}
 	}
 
-
-    /**
-     * __construct
-     * 用户关注：是
-     * 对象构造方法，用户传入$apiKey与$secretKey进行初始化
-     * @access public
-     * @param string $apiKey
-     * @param string $secretKey
-     * @param array $arr_curlOpts 可选参数
-     * @throws ChannelException 如果出错，则抛出异常，异常号是self::CHANNEL_SDK_INIT_FAIL
-    */
 	public function __construct ($apiKey = NULL, $secretKey = NULL, $arr_curlOpts = array())
 	{
 		if($this->_checkString($apiKey, 1, 64)){
@@ -792,22 +420,6 @@ class Channel extends BaeBase
         $this->_resetErrorStatus();
 	}
 
-
-	/**
-	 * _checkString
-	 *  
-	 * 用户关注：否
-	 * 
-	 * 检查参数是否是一个大于等于$min且小于等于$max的字符串
-	 * 
-	 * @access protected
-	 * @param string $str 要检查的字符串
-	 * @param int $min 字符串最小长度
-	 * @param int $max 字符串最大长度
-	 * @return 成功：true；失败：false
-	 * 
-	 * @version 1.0.0.0
-	 */
 	protected function _checkString($str, $min, $max)
 	{
 		if (is_string($str) && strlen($str) >= $min && strlen($str) <= $max) {
@@ -816,24 +428,6 @@ class Channel extends BaeBase
 		return false;
 	}
 
-    /**
-     * _getKey
-     * 
-     * 用户关注：否
-     * 获取AK/SK/TOKEN/HOST的统一过程函数
-     * 
-     * @access protected
-     * @param array $opt 参数数组
-     * @param string $opt_key 参数数组的key
-     * @param string $member 对象成员
-     * @param string $g_key 全局变量的名字
-     * @param string $env_key 环境变量的名字
-     * @param int $min 字符串最短值
-     * @param int $max 字符串最长值
-     * @throws ChannelException 如果出错，则抛出ChannelException异常，异常类型为self::CHANNEL_SDK_PARAM
-     * 
-     * @version 1.0.0.0
-     */
 	protected function _getKey(&$opt,
             $opt_key,
             $member,
@@ -888,20 +482,7 @@ class Channel extends BaeBase
                     self::CHANNEL_SDK_PARAM);
         }
 	}
-
-	/**
-	 * _adjustOpt
-	 *   
-	 * 用户关注：否
-	 * 
-	 * 参数调整方法
-	 * 
-	 * @access protected
-	 * @param array $opt 参数数组
-	 * @throws ChannelException 如果出错，则抛出异常，异常号为 self::CHANNEL_SDK_PARAM
-	 * 
-	 * @version 1.0.0.0
-	 */
+	
 	protected function _adjustOpt(&$opt)
 	{
 		if (!isset($opt) || empty($opt) || !is_array($opt)) {
@@ -921,19 +502,6 @@ class Channel extends BaeBase
 		}
 	}
 
-	/**
-	 * _checkParams
-	 *   
-	 * 用户关注：否
-	 * 
-	 * 检查输入参数是否合法
-	 * 
-	 * @access protected
-	 * @param array $params 参数数组
-	 * @throws ChannelException 如果出错，则抛出异常，异常号为 self::CHANNEL_SDK_PARAM
-	 * 
-	 * @version 1.0.0.0
-	 */
 	protected function _checkParams(&$params)
 	{
 		if ( !is_array($params)) {
@@ -987,14 +555,6 @@ class Channel extends BaeBase
 			}
 		}
 	}
-
-	/**
-	 * _genSign
-	 *
-	 *用户关注： 否
-	 *
-	 * 根据method, url, 参数内容 生成签名
-	*/
 	protected function _genSign($method, $url, $arrContent)
 	{
     	//$secret_key = $this->_secretKey;
@@ -1014,19 +574,6 @@ class Channel extends BaeBase
     	return $sign;
 	}
 
-	/**
-	 * _baseControl
-	 *   
-	 * 用户关注：否
-	 * 
-	 * 网络交互方法
-	 * 
-	 * @access protected
-	 * @param array $opt 参数数组
-	 * @throws ChannelException 如果出错，则抛出异常，错误号为self::CHANNEL_SDK_SYS
-	 * 
-	 * @version 1.0.0.0
-	 */
 	protected function _baseControl($opt)
 	{
 		$content = '';
@@ -1071,18 +618,6 @@ class Channel extends BaeBase
                 $request->get_response_code());
 	}
 
-	/**
-	 * _channelExceptionHandler
-	 *   
-	 * 用户关注：否
-	 * 
-	 * 异常处理方法
-	 * 
-	 * @access protected
-	 * @param Excetpion $ex 异常处理函数，主要是填充Channel对象的错误状态信息
-	 * 
-	 * @version 1.0.0.0
-	 */
 	protected function _channelExceptionHandler($ex)
 	{
 		$tmpCode = $ex->getCode();
@@ -1100,20 +635,6 @@ class Channel extends BaeBase
 		}
 	}
 
-	/**
-	 * _commonProcess
-	 *   
-	 * 用户关注：否
-	 * 
-	 * 所有服务类SDK方法的通用过程
-	 * 
-	 * @access protected
-	 * @param array $paramOpt 参数数组
-	 * @param array $arrNeed 必须的参数KEY
-	 * @throws ChannelException 如果出错，则抛出异常
-	 * 
-	 * @version 1.0.0.0
-	 */
 	protected function _commonProcess($paramOpt = NULL)
 	{
 		$this->_adjustOpt($paramOpt);
@@ -1141,20 +662,6 @@ class Channel extends BaeBase
 		throw new ChannelException($result['error_msg'], $result['error_code']);
 	}
 
-	/**
-	 * _mergeArgs
-	 *   
-	 * 用户关注：否
-	 * 
-	 * 合并传入的参数到一个数组中，便于后续处理
-	 * 
-	 * @access protected
-	 * @param array $arrNeed 必须的参数KEY
-	 * @param array $tmpArgs 参数数组
-	 * @throws ChannelException 如果出错，则抛出异常，异常号为self::Channel_SDK_PARAM 
-	 * 
-	 * @version 1.0.0.0
-	 */
 	protected function _mergeArgs($arrNeed, $tmpArgs)
 	{
 		$arrArgs = array();
@@ -1204,17 +711,6 @@ class Channel extends BaeBase
 		return $arrArgs;
 	}
 
-	/**
-	 * _resetErrorStatus
-	 *   
-	 * 用户关注：否
-	 * 
-	 * 恢复对象的错误状态，每次调用服务类方法时，由服务类方法自动调用该方法
-	 * 
-	 * @access protected
-	 * 
-	 * @version 1.0.0.0
-	 */
 	protected function _resetErrorStatus()
 	{
 		$this->errcode = 0;

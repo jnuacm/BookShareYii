@@ -12018,3 +12018,11 @@ Stack trace:
 REQUEST_URI=/bookshareyii/index.php/api/avatar/gg
 in D:\Program Files\xampp\htdocs\bookshareyii\protected\controllers\AvatarController.php (8)
 in D:\Program Files\xampp\htdocs\bookshareyii\index.php (11)
+2015/05/04 04:22:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/request/26".' in D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\xampp\htdocs\bookshareyii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/request/26')
+#1 D:\Program Files\xampp\htdocs\bookshareyii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\xampp\htdocs\bookshareyii\index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/bookshareyii/index.php/api/request/26
+---

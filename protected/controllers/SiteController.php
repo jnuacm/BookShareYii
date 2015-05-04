@@ -1,5 +1,5 @@
 <?php
-require_once 'response.php';
+require_once dirname(__FILE__).'/response.php';
 class SiteController extends Controller
 {
 	/**
@@ -81,7 +81,17 @@ class SiteController extends Controller
             if(isset($_POST['username'])){
                 $form = new LoginForm;
                 $form->attributes = array('username'=>$_POST['username'], 'password'=>$_POST['password']);
+				$usernameUseridPair = new Userid;
+				$usernameUseridPair->attributes = array('username'=>$_POST['username'], 'userid'=>$_POST['userid']);
                 if($form->validate() && $form->login()){
+					$oldPair = Userid::model()->findByAttributes(array('username'=>$_POST['username']));
+					if($oldPair){
+						$oldPair->userid = $_POST['userid'];
+						$oldPair->save();
+					}
+					else{
+						$usernameUseridPair->save();
+					}
                     $books = Book::getUserAllBooks($_POST['username']);
                     $friends = Friendship::getUserFriends($_POST['username']);
                     _sendResponse(200, CJSON::encode(array_merge($books, array('friend'=>$friends))));

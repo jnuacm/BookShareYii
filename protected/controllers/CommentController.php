@@ -1,6 +1,6 @@
 <?php
-include 'protected/controllers/response.php';
-include 'protected/controllers/PushMessage.php';
+include dirname(__FILE__).'/response.php';
+include dirname(__FILE__).'/PushMessage.php';
 class CommentController extends Controller
 {
 	public function actionListOnIsbn(){

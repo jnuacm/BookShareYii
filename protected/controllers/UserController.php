@@ -1,5 +1,5 @@
 <?php
-require_once 'response.php';
+require_once dirname(__FILE__).'/response.php';
 class UserController extends Controller
 {
 	/**

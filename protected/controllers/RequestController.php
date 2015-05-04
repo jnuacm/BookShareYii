@@ -157,8 +157,8 @@ class RequestController extends Controller
     private function makeFriend($request) {
         $friendship = new Friendship;
         $friendship->attributes = array('user1'=>$request->from, 'user2'=>$request->to, 'time'=>new CDbExpression('NOW()'));
-		if(Friendship::model()->findByAttributes(array('user1'=>$request->from, 'user2'=>$request->to)
-		 ||  Friendship::model()->findByAttributes(array('user1'=>$request->to, 'user2'=>$request->to)){
+		if(Friendship::model()->findByAttributes(array('user1'=>$request->from, 'user2'=>$request->to))
+		 ||  Friendship::model()->findByAttributes(array('user1'=>$request->to, 'user2'=>$request->to))){
 			return false;
 		 }
         $request->status = Request::Done;

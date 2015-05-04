@@ -10,7 +10,7 @@ function getAuthImage($text) {
 	$buttum_c = ImageColorAllocate($im,$tmpC0,$tmpC1,$tmpC2);
 	imagefill($im, 16, 13, $buttum_c);
 
-	$font = '/var/www/bookshareyii/bookshareWeb/views/verification_code/t1.ttf';
+	$font = dirname(__FILE__).'/t1.ttf';
 
 	for ($i=0;$i<strlen($text);$i++)
 	{

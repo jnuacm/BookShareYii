@@ -59,9 +59,9 @@
                 <div class="navbar-right" id="signature">
                 <?php
                     if($logined){
-                    	$avatar = '../../bookshareyii/upload/avatar'.$_COOKIE['username'];
+                    	$avatar = 'default';
                     	if($_COOKIE['avatar'] == '0')
-                    		$avatar = '../../bookshareyii/upload/default';
+                    		$avatar = 'default';
                     	echo '
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
@@ -121,8 +121,6 @@
        </div>
     </div>
 
-   
-   
    </br></br></br>
    </br></br></br>
    </br></br></br>

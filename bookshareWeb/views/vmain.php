@@ -59,19 +59,18 @@
                 <div class="navbar-right" id="signature">
                 <?php
                     if($logined){
-                    	$avatar = '../../bookshareyii/upload/avatar'.$_COOKIE['username'];
+                    	$avatar = 'default';
                     	if($_COOKIE['avatar'] == '0')
-                    		$avatar = '../../bookshareyii/upload/default';
+                    		$avatar = 'default';
                     	echo '
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            用户中心
+                                            欢迎您来到Bookshare！！！
                                    <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu  navbar-inverse">
                                         <li><img src="'.$avatar.'" width="180" height="180" ></img></li>
-                                        <li><a style="color:white" href="#">用户信息</a></li>
                                         <li><a style="color:white" onclick=\'loginOut()\'>注销</a></li>
                                 </ul>
                             </li>
